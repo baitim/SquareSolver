@@ -9,10 +9,10 @@ double D;
 
 int main () {
     double a, b, c;
-    printf ("Введите коэффициенты для квадратного уравнения a*x^2 + b*x + c = 0 через пробел\n");
+    printf ("Enter the coefficients for the quadratic equation a*x^2 + b*x + c = 0 separated by a space\n");
     scanf ("%lf%lf%lf", &a, &b, &c);
     int roots = sol(a, b, c);
-    printf ("Всего корней: %d\n", roots);
+    printf ("Total roots: %d\n", roots);
     double x, x1, x2;
     switch (roots) {
         case 0:
