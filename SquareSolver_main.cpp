@@ -5,29 +5,29 @@
 #include <ctype.h>
 #define eps 1e-6
 
-void output(double x1, double x2, int roots);
+void print_roots(double x1, double x2, int roots);
 
 void input_coefficients(double* a, double* b, double* c);
 
-bool is_in_input_flush();
+bool check_input(int count_input);
 
 int calculation_of_roots(double a, double b, double c, double* x1, double* x2);
 
 bool is_double_equal(double x, double y);
 
 int main (void) {
-    double a = 0, b = 0, c = 0; //coefficients
+    double a = 0, b = 0, c = 0; // coefficients
     printf ("Enter the coefficients for the quadratic equation a*x^2 + b*x + c = 0 separated by a space\n");
 
     input_coefficients(&a, &b, &c); // input
 
     double x1 = 0, x2 = 0; // roots
     int roots = calculation_of_roots(a, b, c, &x1, &x2);
-    output(x1, x2, roots); // answer
+    print_roots(x1, x2, roots); // answer
     return 0;
 }
 
-void output(double x1, double x2, int roots) {
+void print_roots(double x1, double x2, int roots) {
     if (roots >= 0 and roots <= 2)
         printf ("Total roots: %d\n", roots);
     if (roots == 3)
@@ -52,24 +52,29 @@ void output(double x1, double x2, int roots) {
 void input_coefficients(double* a, double* b, double* c) {
     while (true) {
         int count_input = scanf ("%lf%lf%lf", a, b, c);
-        if (is_in_input_flush() or count_input != 3 or count_input == EOF) {
-            printf ("incorrect input, input: 0 - to exit, another integer - to continue\n");
-            int x;
-            while (getchar() != '\n');
-            scanf ("%d", &x);
-            if (x == 0) exit(0);
-        }
-        else
-            break;
+        bool f = check_input(count_input);
+        if (f) break;
     }
 }
 
-bool is_in_input_flush() {
+bool check_input(int count_input) {
+    bool rest_of_input = false;
     char c;
     while ((c = getchar()) != '\n')
         if (c != ' ' and c != '\t')
-            return true;
-    return false;
+            rest_of_input = true; // check rest of input
+
+    if (rest_of_input or count_input != 3 or count_input == EOF) {
+        printf ("incorrect input, input: 0 - to exit, another integer - to continue\n");
+        int x;
+        while (getchar() != '\n');
+        scanf ("%d", &x);
+        while (getchar() != '\n');
+        if (x == 0) exit(0); // exit
+        return false; // continue input
+    }
+    else
+        return true;
 }
 
 int calculation_of_roots(double a, double b, double c, double* x1, double* x2) {
