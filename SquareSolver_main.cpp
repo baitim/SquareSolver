@@ -5,13 +5,15 @@
 #include <ctype.h>
 #define eps 1e-6
 
-void print_roots(double x1, double x2, int roots);
+enum cases { root_0, root_1_quad, roots_2_quad, root_1_line, root_inf };
+
+void print_roots(double x1, double x2, cases roots);
 
 void input_coefficients(double* a, double* b, double* c);
 
 bool check_input(int count_input);
 
-int calculation_of_roots(double a, double b, double c, double* x1, double* x2);
+cases calculation_of_roots(double a, double b, double c, double* x1, double* x2);
 
 bool is_double_equal(double x, double y);
 
@@ -22,29 +24,25 @@ int main (void) {
     input_coefficients(&a, &b, &c); // input
 
     double x1 = 0, x2 = 0; // roots
-    int roots = calculation_of_roots(a, b, c, &x1, &x2);
+    cases roots;
+    roots = calculation_of_roots(a, b, c, &x1, &x2);
     print_roots(x1, x2, roots); // answer
     return 0;
 }
 
-void print_roots(double x1, double x2, int roots) {
-    if (roots >= 0 and roots <= 2)
-        printf ("Total roots: %d\n", roots);
-    if (roots == 3)
-        printf ("Total roots: 1\n");
-
+void print_roots(double x1, double x2, cases roots) {
     switch (roots) {
-        case 0: // 0 roots, the equation is square or a = 0, b = 0, c != 0
+        case root_0: // 0 roots, the equation is square or a = 0, b = 0, c != 0
             break;
-        case 1: // 1 root, quadratic equation
-            printf ("x = %lf\n", x1);
+        case root_1_quad: // 1 root, quadratic equation
+            printf ("Total roots: 1\nx = %lf\n", x1);
             break;
-        case 2: // 2 roots, the equation is square
-            printf ("x1 = %lf  x2 = %lf\n", x1, x2);
+        case roots_2_quad: // 2 roots, the equation is square
+            printf ("Total roots: 2\nx1 = %lf  x2 = %lf\n", x1, x2);
             break;
-        case 3: // 1 root, linear equation
+        case root_1_line: // 1 root, linear equation
             printf ("The equation is not square, the root = %lf\n", x1);
-        case 4: // infinitely many roots
+        case root_inf: // infinitely many roots
             printf ("The equation is not square, infinitely many roots");
     }
 }
@@ -77,19 +75,19 @@ bool check_input(int count_input) {
         return true;
 }
 
-int calculation_of_roots(double a, double b, double c, double* x1, double* x2) {
+cases calculation_of_roots(double a, double b, double c, double* x1, double* x2) {
     if (is_double_equal(a, 0)) {
-        if (b != 0) { *x1 = -c/b; return 3; }
+        if (b != 0) { *x1 = -c/b; return root_1_line; }
         if (b == 0) {
-            if (c == 0) return 4;
-            if (c != 0) return 0;
+            if (c == 0) return root_inf;
+            if (c != 0) return root_0;
         }
     }
     double D = b*b - 4*a*c;
     double Dsqrt = sqrt(D);
-    if (D < 0) return 0;
-    if (is_double_equal(D, 0)) { *x1 = -b/2/a; return 1; }
-    if (D > 0) { *x1 = (-b-Dsqrt)/2/a; *x2 = (-b+Dsqrt)/2/a; return 2; }
+    if (D < 0) return root_0;
+    if (is_double_equal(D, 0)) { *x1 = -b/2/a; return root_1_quad; }
+    if (D > 0) { *x1 = (-b-Dsqrt)/2/a; *x2 = (-b+Dsqrt)/2/a; return roots_2_quad; }
 }
 
 bool is_double_equal(double x, double y) {
