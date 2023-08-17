@@ -2,11 +2,14 @@
 #include <stdlib.h>
 #include <TXLib.h>
 #include <math.h>
+#include <ctype.h>
 #define eps 1e-6
 
 void input_coefficients(double* a, double* b, double* c);
 
-int sol(double a, double b, double c, double* D);
+bool is_in_input_flush();
+
+int count_of_roots(double a, double b, double c, double D);
 
 bool is_double_equal(double x, double y);
 
@@ -16,8 +19,8 @@ int main (void) {
 
     input_coefficients(&a, &b, &c);
 
-    double D;
-    int roots = sol(a, b, c, &D);
+    double D = b*b - 4*a*c;
+    int roots = count_of_roots(a, b, c, D);
     if (roots >= 0 and roots <= 2)
         printf ("Total roots: %d\n", roots);
     double x, x1, x2;
@@ -46,10 +49,10 @@ int main (void) {
 void input_coefficients(double* a, double* b, double* c) {
     while (true) {
         int count_input = scanf ("%lf%lf%lf", a, b, c);
-        if (count_input != 3 or count_input == EOF) {
+        if (is_in_input_flush() or count_input != 3 or count_input == EOF) {
             printf ("incorrect input, input: 0 - to exit, another integer - to continue\n");
-            while (getchar() != '\n');
             int x;
+            while (getchar() != '\n');
             scanf ("%d", &x);
             if (x == 0) exit(0);
         }
@@ -58,7 +61,15 @@ void input_coefficients(double* a, double* b, double* c) {
     }
 }
 
-int sol(double a, double b, double c, double* D) {
+bool is_in_input_flush() {
+    char c;
+    while ((c = getchar()) != '\n')
+        if (c != ' ' and c != '\t')
+            return true;
+    return false;
+}
+
+int count_of_roots(double a, double b, double c, double D) {
     if (is_double_equal(a, 0)) {
         if (b != 0) return 3;
         if (b == 0) {
@@ -66,10 +77,9 @@ int sol(double a, double b, double c, double* D) {
             if (c != 0) return 0;
         }
     }
-    *D = b*b - 4*a*c;
-    if (*D < 0) return 0;
-    if (is_double_equal(*D, 0)) return 1;
-    if (*D > 0) return 2;
+    if (D < 0) return 0;
+    if (is_double_equal(D, 0)) return 1;
+    if (D > 0) return 2;
 }
 
 bool is_double_equal(double x, double y) {
