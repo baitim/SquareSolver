@@ -5,7 +5,6 @@
 #include <ctype.h>
 
 #include "Header.h"
-#include "Functions.cpp"
 
 int main (void)
 {
