@@ -33,9 +33,9 @@ cases linear_equation(coefs coef, double *x1, double *x2);
 bool is_double_equal(double x, double y);
 
 int main (void)
-{
+{    //     \033[96m ------ \033[0m
         coefs coef;
-        printf ("Enter the coefficients for the quadratic equation a*x^2 + b*x + c = 0 separated by a space\n");
+        printf ("\033[33mEnter the coefficients for the quadratic equation a*x^2 + b*x + c = 0 separated by a space\033[0m\n");
 
         input_coefficients(&coef); // input
 
@@ -51,22 +51,22 @@ void print_roots(double x1, double x2, cases roots)
 {
         switch (roots) {
         case root_0: // 0 roots, the equation is square or a = 0, b = 0, c != 0
-                printf ("Total roots: 0");
+                printf ("\033[93mTotal roots: 0\033[0m");
                 break;
         case root_1_quad: // 1 root, quadratic equation
-                printf ("Total roots: 1\nx = %lf\n", x1);
+                printf ("\033[93mTotal roots: 1\nx = \033[96m%.2lf\033[0m\n", x1);
                 break;
         case roots_2_quad: // 2 roots, the equation is square
-                printf ("Total roots: 2\nx1 = %lf  x2 = %lf\n", x1, x2);
+                printf ("\033[93mTotal roots: 2\nx1 = \033[96m%.2lf  \033[93mx2 = \033[96m%.2lf\033[0m\n", x1, x2);
                 break;
         case root_1_line: // 1 root, linear equation
-                printf ("The equation is not square, the root = %lf\n", x1);
+                printf ("\033[93mThe equation is not square, the root = \033[96m%.2lf\033[0m\n", x1);
                 break;
         case root_inf: // infinitely many roots
-                printf ("The equation is not square, infinitely many roots");
+                printf ("\033[94mThe equation is not square, \033[91minfinitely \033[94mmany roots\033[0m\n");
                 break;
         default:
-                printf ("ERROR");
+                printf ("\033[91mERROR\033[0m\n");
                 break;
         }
 }
@@ -91,7 +91,7 @@ bool check_input(int count_input)
                         rest_of_input = true; // check rest of input
 
         if (rest_of_input or count_input != 3 or count_input == EOF) {
-                printf ("incorrect input, input: 0 - to exit, another integer - to continue\n");
+                printf ("\033[92mincorrect input, input: 0 - to exit, another integer - to continue\033[0m\n");
                 int x = 1;
                 scanf ("%d", &x);
                 while (getchar() != '\n')
