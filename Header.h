@@ -25,11 +25,17 @@ enum cases_numbers_roots {
         ROOT_ERR
 };
 
+enum USER_CHOICE {
+        USER_CONTINUE,
+        USER_CORRECT,
+        USER_EXIT
+};
+
 void print_roots(coefs_roots data, cases_numbers_roots roots);
 
-void input_coefficients(coefs_roots *data);
+bool input_coefficients(coefs_roots *data);
 
-bool check_input(int count_input);
+USER_CHOICE check_input(int count_input);
 
 cases_numbers_roots calculation_of_roots(coefs_roots *data);
 

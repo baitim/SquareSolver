@@ -26,25 +26,39 @@ void print_roots(coefs_roots data, cases_numbers_roots roots)
         case ROOT_INF:
                 printf(LIGHT_BLUE "The equation is not square, " LIGHT_RED "infinitely" LIGHT_BLUE " many roots\n" DEFAULT_COLOUR);
                 break;
-        default:
+        case ROOT_ERR:
                 printf(LIGHT_RED "ERROR\n" DEFAULT_COLOUR);
+                assert(0);
+                break;
+        default:
                 assert(0);
                 break;
         }
 }
 
 // the function reads the coefficients and sends them for verification
-void input_coefficients(coefs_roots *data)
+bool input_coefficients(coefs_roots *data)
 {
         while (true) {
                 int count_input = scanf("%lf%lf%lf", &data->a, &data->b, &data->c);
-                if (check_input(count_input))
+                switch (check_input(count_input)) {
+                case USER_CONTINUE:
                         break;
+                case USER_CORRECT:
+                        return false;
+                        break;
+                case USER_EXIT:
+                        return true;
+                        break;
+                default:
+                        assert(0);
+                        break;
+                }
         }
 }
 
 // the function checks the correctness of the input
-bool check_input(int count_input)
+USER_CHOICE check_input(int count_input)
 {
         bool is_input_empty = false;
         char c = '$';
@@ -61,10 +75,10 @@ bool check_input(int count_input)
                         ;
 
                 if (x == 0)
-                        exit(0);
-                return false; // continue input
+                        return USER_EXIT;
+                return USER_CONTINUE;
         } else {
-                return true; // correct input
+                return USER_CORRECT;
         }
 }
 
