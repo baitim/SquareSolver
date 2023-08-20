@@ -11,7 +11,7 @@
 
 int main ()
 {
-        coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+        coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 
         while (input_coefficients_or_exit(&data)) {
                 calculation_of_roots(&data);
