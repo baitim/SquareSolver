@@ -9,12 +9,7 @@
 #define ANSI_LIGHT_BLUE      "\033[94m"
 #define ANSI_LIGHT_CYAN      "\033[96m"
 
-struct coefs_roots {
-        double a, b, c;
-        double root1, root2;
-};
-
-enum cases_numbers_roots {
+enum number_roots {
         ROOT_0,
         ROOT_1_QUAD,
         ROOT_2_QUAD,
@@ -29,7 +24,13 @@ enum user_choice {
         USER_EXIT
 };
 
-void print_roots(coefs_roots data, cases_numbers_roots roots);
+struct coefs_roots {
+        double a, b, c;
+        double root1, root2;
+        number_roots count_root;
+};
+
+void print_roots(coefs_roots data);
 
 bool input_coefficients_or_exit(coefs_roots *data);
 
@@ -37,9 +38,9 @@ bool is_input_empty();
 
 user_choice check_input(int count_input);
 
-cases_numbers_roots calculation_of_roots(coefs_roots *data);
+void calculation_of_roots(coefs_roots *data);
 
-cases_numbers_roots calculation_linear(coefs_roots *data);
+void calculation_linear(coefs_roots *data);
 
 bool is_double_equal(double x, double y);
 

@@ -8,8 +8,9 @@
 #include "Names.h"
 
 // the function prints the number of roots and the roots
-void print_roots(coefs_roots data, cases_numbers_roots roots)
+void print_roots(coefs_roots data)
 {
+        number_roots roots = data.count_root;
         switch (roots) {
         case ROOT_0:
                 printf(ANSI_LIGHT_YELLOW "Total roots: 0\n" ANSI_DEFAULT_COLOUR);
