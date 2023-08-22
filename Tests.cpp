@@ -8,6 +8,8 @@
 
 #include "Names.h"
 
+#if TEST_ON == 1
+
 void check_test(double a_, double b_, double c_, double root1_, double root2_, number_roots roots);
 
 // the function tests calculation
@@ -31,3 +33,5 @@ void check_test(double a_, double b_, double c_, double root1_, double root2_, n
 
         assert(is_double_equal(data_.root1, root1_) && is_double_equal(data_.root2, root2_) && data_.count_root == roots);
 }
+
+#endif
