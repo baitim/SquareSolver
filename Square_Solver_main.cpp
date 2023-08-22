@@ -11,7 +11,9 @@ int main ()
         printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
                "# (c) bai_tim, 2023\n\n" ANSI_DEFAULT_COLOUR);
 
+#if TEST_ON == 1
         test();
+#endif
 
         coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 

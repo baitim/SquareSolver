@@ -9,6 +9,8 @@
 #define ANSI_LIGHT_BLUE      "\033[94m"
 #define ANSI_LIGHT_CYAN      "\033[96m"
 
+#define TEST_ON 1
+
 const double EPS = 1e-8;
 
 enum number_roots {
