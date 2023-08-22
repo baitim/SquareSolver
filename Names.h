@@ -9,9 +9,9 @@
 #define ANSI_LIGHT_BLUE      "\033[94m"
 #define ANSI_LIGHT_CYAN      "\033[96m"
 
-#define TEST_ON 1
+#define TEST_ON
 
-const double EPS = 1e-8;
+const double EPSILON = 1e-7;
 
 enum number_roots {
         ROOT_0,
@@ -33,6 +33,10 @@ struct coefs_roots {
         double root1, root2;
         number_roots count_root;
 };
+
+bool is_test_on(int argc, char *argv[]);
+
+void check_test(double a_, double b_, double c_, double root1_, double root2_, number_roots roots);
 
 void test();
 

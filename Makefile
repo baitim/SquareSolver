@@ -3,13 +3,13 @@ options = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-eq
 debug = 
 
 run : start.exe
-	start.exe
+	
 
 start.exe : Square_Solver_main.o Tests.o Input.o Calculation.o Output.o
 	g++ -g Square_Solver_main.o Tests.o Input.o Calculation.o Output.o -o start.exe
 
 Square_Solver_main.o : Square_Solver_main.cpp
-	g++ -g -c Square_Solver_main.cpp -o Square_Solver_main.o $(options)
+	g++ -g -c Square_Solver_main.cpp -o Square_Solver_main.o $(options) $(debug)
 
 Tests.o : Tests.cpp
 	g++ -g -c Tests.cpp -o Tests.o $(options) $(debug)

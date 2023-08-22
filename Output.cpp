@@ -17,16 +17,16 @@ void print_roots(coefs_roots data)
                 break;
         case ROOT_1_QUAD:
                 printf(ANSI_LIGHT_YELLOW "Total roots: 1\nx = " ANSI_LIGHT_CYAN
-                                         "%.2lf\n" ANSI_DEFAULT_COLOUR, data.root1);
+                                         "%.6lf\n" ANSI_DEFAULT_COLOUR, data.root1);
                 break;
         case ROOT_2_QUAD:
                 printf(ANSI_LIGHT_YELLOW "Total roots: 2\nx1 = " ANSI_LIGHT_CYAN
-                                         "%.2lf  " ANSI_LIGHT_YELLOW "x2 = " ANSI_LIGHT_CYAN
-                                         "%.2lf\n" ANSI_DEFAULT_COLOUR, data.root1, data.root2);
+                                         "%.6lf  " ANSI_LIGHT_YELLOW "x2 = " ANSI_LIGHT_CYAN
+                                         "%.6lf\n" ANSI_DEFAULT_COLOUR, data.root1, data.root2);
                 break;
         case ROOT_1_LINE:
                 printf(ANSI_LIGHT_YELLOW "The equation is not square, the root = " ANSI_LIGHT_CYAN
-                                         "%.2lf\n" ANSI_DEFAULT_COLOUR, data.root1);
+                                         "%.6lf\n" ANSI_DEFAULT_COLOUR, data.root1);
                 break;
         case ROOT_INF:
                 printf(ANSI_LIGHT_YELLOW "The equation is not square, " ANSI_LIGHT_RED

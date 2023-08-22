@@ -22,7 +22,7 @@ void calculation_of_roots(coefs_roots *data)
         }
 
         double discriminant = b_ * b_ - 4 * a_ * c_;
-        if (discriminant < -EPS) {
+        if (discriminant < -EPSILON) {
                 data->count_root = ROOT_0;
                 return;
         }
@@ -33,7 +33,7 @@ void calculation_of_roots(coefs_roots *data)
                 data->count_root = ROOT_1_QUAD;
                 return;
         }
-        if (discriminant > EPS) {
+        if (discriminant > EPSILON) {
                 data->root1 = (-b_ - discriminant_sqrt) / 2 / a_;
                 data->root2 = (-b_ + discriminant_sqrt) / 2 / a_;
                 data->count_root = ROOT_2_QUAD;
@@ -61,5 +61,5 @@ void calculation_linear(coefs_roots *data)
 // the function compares doubles
 bool is_double_equal(double x, double y)
 {
-        return (fabs(x - y) <= EPS);
+        return (fabs(x - y) <= EPSILON);
 }

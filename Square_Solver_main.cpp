@@ -6,13 +6,14 @@
 
 #include "Names.h"
 
-int main ()
+int main (int argc, char *argv[])
 {
         printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
-               "# (c) bai_tim, 2023\n\n" ANSI_DEFAULT_COLOUR);
+               "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOUR);
 
-#if TEST_ON == 1
-        test();
+#ifdef TEST_ON
+        if (is_test_on(argc, argv))
+                test();
 #endif
 
         coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
