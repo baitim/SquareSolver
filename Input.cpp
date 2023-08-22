@@ -15,7 +15,7 @@ bool input_coefficients_or_exit(coefs_roots *data)
         printf(ANSI_YELLOW "Enter e to exit or something else to continue\n" ANSI_DEFAULT_COLOUR);
         char c = '$';
         int count_c = scanf("%c", &c);
-        if (is_input_empty() and count_c == 1 and c == 'e')
+        if (is_input_empty() && count_c == 1 && c == 'e')
                 return false;
 
         printf(ANSI_YELLOW "Enter the coefficients for the quadratic"
@@ -51,7 +51,7 @@ user_choice check_input(int count_input)
                                                  "0 - to exit, 1 - to continue\n" ANSI_DEFAULT_COLOUR);
                         int count_x = scanf("%d", &x);
 
-                        if (is_input_empty() and count_x == 1 and (x == 1 or x == 0)) {
+                        if (is_input_empty() && count_x == 1 && (x == 1 or x == 0)) {
                             break;
                         }
                 }
@@ -68,7 +68,7 @@ bool is_input_empty()
         bool is_empty_ = true;
         char c = '$';
         while ((c = (char)getchar()) != '\n') {
-                if (c != ' ' and c != '\t')
+                if (c != ' ' && c != '\t')
                         is_empty_ = false;
         }
         return is_empty_;

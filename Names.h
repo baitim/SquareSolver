@@ -34,6 +34,10 @@ struct coefs_roots {
         number_roots count_root;
 };
 
+void start_input(int argc, char *argv[]);
+
+bool is_correct_start_input(int argc, char *argv[], coefs_roots *data_start);
+
 bool is_test_on(int argc, char *argv[]);
 
 void check_test(double a_, double b_, double c_, double root1_, double root2_, number_roots roots);

@@ -4,15 +4,14 @@ debug =
 
 run : start.exe
 	
-
-start.exe : Square_Solver_main.o Tests.o Input.o Calculation.o Output.o
-	g++ -g Square_Solver_main.o Tests.o Input.o Calculation.o Output.o -o start.exe
+start.exe : Square_Solver_main.o Start_Input.o Input.o Calculation.o Output.o Tests.o
+	g++ -g Square_Solver_main.o Start_Input.o Input.o Calculation.o Output.o Tests.o -o start.exe 
 
 Square_Solver_main.o : Square_Solver_main.cpp
 	g++ -g -c Square_Solver_main.cpp -o Square_Solver_main.o $(options) $(debug)
 
-Tests.o : Tests.cpp
-	g++ -g -c Tests.cpp -o Tests.o $(options) $(debug)
+Start_Input.o : Start_Input.cpp
+	g++ -g -c Start_Input.cpp -o Start_Input.o $(options) $(debug)
 
 Input.o : Input.cpp
 	g++ -g -c Input.cpp -o Input.o $(options) $(debug)
@@ -22,3 +21,6 @@ Calculation.o : Calculation.cpp
 
 Output.o : Output.cpp
 	g++ -g -c Output.cpp -o Output.o $(options) $(debug)
+
+Tests.o : Tests.cpp
+	g++ -g -c Tests.cpp -o Tests.o $(options) $(debug)

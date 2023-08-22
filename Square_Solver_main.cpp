@@ -16,6 +16,8 @@ int main (int argc, char *argv[])
                 test();
 #endif
 
+        start_input(argc, argv);
+
         coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 
         while (input_coefficients_or_exit(&data)) {

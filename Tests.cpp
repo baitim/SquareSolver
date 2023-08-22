@@ -10,7 +10,7 @@
 
 #ifdef TEST_ON
 
-//
+// check if "-test_on" in input
 bool is_test_on(int argc, char *argv[]) {
         for (int i = 0; i < argc; i++) {
                 if (strcmp(argv[i], "-test_on") == 0)
