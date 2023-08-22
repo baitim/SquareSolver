@@ -5,12 +5,14 @@
 #include <ctype.h>
 
 #include "Names.h"
-#include "Input.cpp"
-#include "Calculation.cpp"
-#include "Output.cpp"
 
 int main ()
 {
+        printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
+               "# (c) bai_tim, 2023\n\n" ANSI_DEFAULT_COLOUR);
+
+        test();
+
         coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 
         while (input_coefficients_or_exit(&data)) {

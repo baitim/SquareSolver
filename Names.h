@@ -9,6 +9,8 @@
 #define ANSI_LIGHT_BLUE      "\033[94m"
 #define ANSI_LIGHT_CYAN      "\033[96m"
 
+const double EPS = 1e-8;
+
 enum number_roots {
         ROOT_0,
         ROOT_1_QUAD,
@@ -30,6 +32,8 @@ struct coefs_roots {
         number_roots count_root;
 };
 
+void test();
+
 void print_roots(coefs_roots data);
 
 bool input_coefficients_or_exit(coefs_roots *data);
@@ -45,3 +49,4 @@ void calculation_linear(coefs_roots *data);
 bool is_double_equal(double x, double y);
 
 #endif
+//
