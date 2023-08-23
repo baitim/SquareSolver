@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <TXLib.h>
+#include <math.h>
+#include <ctype.h>
+
+#include "Names.h"
+
+int main (int argc, char *argv[])
+{
+        printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
+               "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOUR);
+
+        for (int i = 0; i < argc; i++) {
+                if (strcmp(argv[i], "-test_on") == 0)
+                        
+        }
+
+#ifdef TEST_ON
+        test();
+#endif
+
+        coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
+
+        while (input_coefficients_or_exit(&data)) {
+                calculation_of_roots(&data);
+                print_roots(data);
+        }
+
+        printf(ANSI_LIGHT_BLUE "Bye\n" ANSI_DEFAULT_COLOUR);
+
+        return 0;
+}
