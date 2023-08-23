@@ -4,14 +4,17 @@ debug =
 
 run : start.exe
 	
-start.exe : Square_Solver_main.o Start_Input.o Input.o Calculation.o Output.o Tests.o
-	g++ -g Square_Solver_main.o Start_Input.o Input.o Calculation.o Output.o Tests.o -o start.exe 
+start.exe : Main.o Read_coefs_in_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o
+	g++ -g Main.o Read_coefs_in_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o -o start.exe 
 
-Square_Solver_main.o : Square_Solver_main.cpp
-	g++ -g -c Square_Solver_main.cpp -o Square_Solver_main.o $(options) $(debug)
+Main.o : Main.cpp
+	g++ -g -c Main.cpp -o Main.o $(options) $(debug)
 
-Start_Input.o : Start_Input.cpp
-	g++ -g -c Start_Input.cpp -o Start_Input.o $(options) $(debug)
+Process_cmd.o : Process_cmd.cpp
+	g++ -g -c Process_cmd.cpp -o Process_cmd.o $(options) $(debug)
+
+Read_coefs_in_cmd.o : Read_coefs_in_cmd.cpp
+	g++ -g -c Read_coefs_in_cmd.cpp -o Read_coefs_in_cmd.o $(options) $(debug)
 
 Input.o : Input.cpp
 	g++ -g -c Input.cpp -o Input.o $(options) $(debug)

@@ -47,18 +47,18 @@ struct coefs_roots {
         number_roots count_root;
 };
 
-//struct cmd_input {
-//        char flags[];
-//        char arguments[];
-//}
+struct cmd_input_data {
+        bool is_coeffs_input;
+        double a, b, c;
+        bool is_test_on;
+        char *name_test_file;
+};
 
-void start_input(int argc, char *argv[]);
+void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data);
 
-bool is_correct_start_input(int argc, char *argv[], coefs_roots *data_start);
+void start_input(cmd_input_data cmd_data);
 
-int is_test_on(int argc, char *argv[]);
-
-void test(int number_name_file, char *argv[]);
+void test(cmd_input_data cmd_data);
 
 int check_test(double a_, double b_, double c_, double root1_, double root2_, int roots);
 

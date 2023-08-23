@@ -5,21 +5,11 @@
 
 #ifdef TEST_ON
 
-// check if "-test_on" in input
-int is_test_on(int argc, char *argv[])
-{
-        for (int i = 0; i < argc-1; i++) {
-                if (strcmp(argv[i], "-test_on") == 0)
-                        return (i+1);
-        }
-        return -1;
-}
-
 // the function tests calculation
-void test(int number_name_file, char *argv[])
+void test(cmd_input_data cmd_data)
 {
         FILE *fp;
-        if ((fp = fopen(argv[number_name_file], "r")) == NULL)
+        if ((fp = fopen(cmd_data.name_test_file, "r")) == NULL)
         {
                 printf(ANSI_LIGHT_RED "Empty file of tests\n" ANSI_DEFAULT_COLOUR);
                 return;
