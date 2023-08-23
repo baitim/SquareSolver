@@ -1,7 +1,8 @@
 #include <TXLib.h>
 #include <stdio.h>
 
-#include "Names.h"
+#include "Defines_enums_structs_const.h"
+#include "Prototypes_functions.h"
 
 int main (int argc, char *argv[])
 {
@@ -9,7 +10,7 @@ int main (int argc, char *argv[])
                "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOUR);
 
 
-        cmd_input_data cmd_data = { false, 0.0f, 0.0f, 0.0f, false };
+        cmd_input_data cmd_data = { false, 0.0f, 0.0f, 0.0f, false, nullptr };
         input_cmd(argc, argv, &cmd_data);
 
         #ifdef TEST_ON
@@ -17,7 +18,7 @@ int main (int argc, char *argv[])
                         test(cmd_data);
         #endif
 
-        process_coefs_in_cmd(cmd_data);
+        calculate_equation_from_cmd(cmd_data);
 
         coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 

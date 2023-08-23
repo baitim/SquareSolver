@@ -1,7 +1,8 @@
 #include <TXLib.h>
 #include <stdio.h>
 
-#include "Names.h"
+#include "Defines_enums_structs_const.h"
+#include "Prototypes_functions.h"
 
 // the function reads the coefficients and sends them for verification
 bool input_coefficients_or_exit(coefs_roots *data)
