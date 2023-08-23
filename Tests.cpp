@@ -12,7 +12,7 @@ void test(cmd_input_data cmd_data)
         FILE *fp;
         if ((fp = fopen(cmd_data.name_test_file, "r")) == NULL)
         {
-                printf(ANSI_LIGHT_RED "Empty file of tests\n" ANSI_DEFAULT_COLOUR);
+                printf(ANSI_LIGHT_RED "Test file read error\n\n" ANSI_DEFAULT_COLOUR);
                 return;
         }
 

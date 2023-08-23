@@ -45,10 +45,11 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
         }
 
         //-----------------------------------------------------
-        for (int i = 0; i < argc-1; i++) {
+        for (int i = 0; i < argc; i++) {
                 if (strcmp(argv[i], "-test_on") == 0) {
                         cmd_data->is_test_on = true;
-                        cmd_data->name_test_file = argv[i+1];
+                        if (i < argc - 1)
+                                cmd_data->name_test_file = argv[i+1];
                 }
         }
 }
