@@ -1,16 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <TXLib.h>
-#include <math.h>
-#include <ctype.h>
-#include <assert.h>
+#include <stdio.h>
 
 #include "Names.h"
 
 // the function reads the coefficients and sends them for verification
 bool input_coefficients_or_exit(coefs_roots *data)
 {
-        assert(data != NULL);
+        ASSERT(data != NULL);
 
         printf(ANSI_YELLOW "Enter e to exit or something else to continue\n" ANSI_DEFAULT_COLOUR);
         char c = '$';

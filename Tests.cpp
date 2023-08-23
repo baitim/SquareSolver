@@ -1,10 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <TXLib.h>
-#include <math.h>
-#include <ctype.h>
-#include <assert.h>
-#include <time.h>
+#include <stdio.h>
 
 #include "Names.h"
 

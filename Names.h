@@ -9,6 +9,19 @@
 #define ANSI_LIGHT_BLUE      "\033[94m"
 #define ANSI_LIGHT_CYAN      "\033[96m"
 
+#ifndef NDEBUG
+#define ASSERT(x)\
+        if (!(x)) {\
+                printf(ANSI_LIGHT_RED "Text in assert: (%s)\n", #x);\
+                printf("File: %s\n", __FILE__);\
+                printf("Function: %s\n", __PRETTY_FUNCTION__);\
+                printf("Line: %d\n" ANSI_DEFAULT_COLOUR, __LINE__);\
+                exit(0);\
+        }
+#else
+#define ASSERT(...)
+#endif
+
 #define TEST_ON
 
 const double EPSILON = 1e-7;
@@ -33,6 +46,11 @@ struct coefs_roots {
         double root1, root2;
         number_roots count_root;
 };
+
+//struct cmd_input {
+//        char flags[];
+//        char arguments[];
+//}
 
 void start_input(int argc, char *argv[]);
 

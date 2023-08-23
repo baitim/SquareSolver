@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <TXLib.h>
-#include <math.h>
-#include <ctype.h>
-#include <assert.h>
+#include <stdio.h>
 
 #include "Names.h"
 
@@ -35,10 +31,10 @@ void print_roots(coefs_roots data)
                 break;
         case ROOT_ERR:
                 printf(ANSI_LIGHT_RED "ERROR\n" ANSI_DEFAULT_COLOUR);
-                assert(0);
+                ASSERT(0);
                 break;
         default:
-                assert(0);
+                ASSERT(0);
                 break;
         }
 }
