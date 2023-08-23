@@ -42,7 +42,7 @@ bool is_test_on(int argc, char *argv[]);
 
 void test();
 
-void check_test(double a_, double b_, double c_, double root1_, double root2_, int roots);
+int check_test(double a_, double b_, double c_, double root1_, double root2_, int roots);
 
 void print_roots(coefs_roots data);
 

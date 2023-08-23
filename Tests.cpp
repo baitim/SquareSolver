@@ -31,6 +31,8 @@ void test()
                 return;
         }
 
+        int is_OK = 1;
+
         while (true) {
                 double a;
                 double b;
@@ -38,18 +40,21 @@ void test()
                 double root1;
                 double root2;
                 int cases_of_roots;
-                int count_input = fscanf(fp, "%lf %lf %lf %lf %lf %d", &a, &b, &c, &root1, &root2, &cases_of_roots);
+                int count_input = fscanf(fp, "%lg %lg %lg %lg %lg %d", &a, &b, &c, &root1, &root2, &cases_of_roots);
                 if (count_input != 6)
                         break;
-                check_test(a, b, c, root1, root2, cases_of_roots);
+                is_OK = min(is_OK, check_test(a, b, c, root1, root2, cases_of_roots));
         }
+
+        if (!is_OK)
+                return;
 
         fclose(fp);
         printf(ANSI_LIGHT_GREEN "ALL TESTS ACCEPTED\n\n" ANSI_DEFAULT_COLOUR);
 }
 
 // the function compares calculation and input
-void check_test(double a_, double b_, double c_, double root1_, double root2_, int roots)
+int check_test(double a_, double b_, double c_, double root1_, double root2_, int roots)
 {
         coefs_roots data_ = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 
@@ -59,7 +64,13 @@ void check_test(double a_, double b_, double c_, double root1_, double root2_, i
 
         calculation_of_roots(&data_);
 
-        assert(is_double_equal(data_.root1, root1_) && is_double_equal(data_.root2, root2_) && (data_.count_root == roots));
+        if (!(is_double_equal(data_.root1, root1_) && is_double_equal(data_.root2, root2_) && (data_.count_root == roots))) {
+                printf(ANSI_LIGHT_RED "Failed: x1 = %lg, x2 = %lg, roots = %d; expected:"
+                                      "x1ref = %lg, x2ref = %lg, roots_ref = %d\n\n" ANSI_DEFAULT_COLOUR,
+                                      data_.root1, data_.root2, data_.count_root, root1_, root2_, roots);
+                return 0;
+        }
+        return 1;
 }
 
 #endif
