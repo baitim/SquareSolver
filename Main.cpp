@@ -17,7 +17,7 @@ int main (int argc, char *argv[])
                         test(cmd_data);
         #endif
 
-        start_input(cmd_data);
+        process_coefs_in_cmd(cmd_data);
 
         coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 

@@ -56,7 +56,7 @@ struct cmd_input_data {
 
 void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data);
 
-void start_input(cmd_input_data cmd_data);
+void process_coefs_in_cmd(cmd_input_data cmd_data);
 
 void test(cmd_input_data cmd_data);
 

@@ -4,8 +4,8 @@ debug =
 
 run : start.exe
 	
-start.exe : Main.o Read_coefs_in_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o
-	g++ -g Main.o Read_coefs_in_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o -o start.exe 
+start.exe : Main.o Process_coefs_in_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o
+	g++ -g Main.o Process_coefs_in_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o -o start.exe 
 
 Main.o : Main.cpp
 	g++ -g -c Main.cpp -o Main.o $(options) $(debug)
@@ -13,8 +13,8 @@ Main.o : Main.cpp
 Process_cmd.o : Process_cmd.cpp
 	g++ -g -c Process_cmd.cpp -o Process_cmd.o $(options) $(debug)
 
-Read_coefs_in_cmd.o : Read_coefs_in_cmd.cpp
-	g++ -g -c Read_coefs_in_cmd.cpp -o Read_coefs_in_cmd.o $(options) $(debug)
+Process_coefs_in_cmd.o : Process_coefs_in_cmd.cpp
+	g++ -g -c Process_coefs_in_cmd.cpp -o Process_coefs_in_cmd.o $(options) $(debug)
 
 Input.o : Input.cpp
 	g++ -g -c Input.cpp -o Input.o $(options) $(debug)
