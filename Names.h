@@ -9,6 +9,10 @@
 #define ANSI_LIGHT_BLUE      "\033[94m"
 #define ANSI_LIGHT_CYAN      "\033[96m"
 
+#define TEST_ON
+
+const double EPSILON = 1e-7;
+
 enum number_roots {
         ROOT_0,
         ROOT_1_QUAD,
@@ -29,6 +33,16 @@ struct coefs_roots {
         double root1, root2;
         number_roots count_root;
 };
+
+void start_input(int argc, char *argv[]);
+
+bool is_correct_start_input(int argc, char *argv[], coefs_roots *data_start);
+
+int is_test_on(int argc, char *argv[]);
+
+void test(int number_name_file, char *argv[]);
+
+int check_test(double a_, double b_, double c_, double root1_, double root2_, int roots);
 
 void print_roots(coefs_roots data);
 

@@ -5,13 +5,21 @@
 #include <ctype.h>
 
 #include "Names.h"
-#include "Input.cpp"
-#include "Calculation.cpp"
-#include "Output.cpp"
 
-int main ()
+int main (int argc, char *argv[])
 {
-        coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+        printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
+               "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOUR);
+
+        #ifdef TEST_ON
+                int number_name_file = -1;
+                if ((number_name_file = is_test_on(argc, argv)) != -1)
+                        test(number_name_file, argv);
+        #endif
+
+        start_input(argc, argv);
+
+        coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 
         while (input_coefficients_or_exit(&data)) {
                 calculation_of_roots(&data);
