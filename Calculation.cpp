@@ -10,7 +10,7 @@
 // the function calculates the roots
 void calculation_of_roots(coefs_roots *data)
 {
-        assert(data != NULL);
+        assert(data != NULL || !isfinite(data->a) || !isfinite(data->b) || !isfinite(data->c));
 
         double a_ = data->a;
         double b_ = data->b;
@@ -45,7 +45,7 @@ void calculation_of_roots(coefs_roots *data)
 // the function calculates the roots if the equation is linear
 void calculation_linear(coefs_roots *data)
 {
-        assert(data != NULL);
+        assert(data != NULL || !isfinite(data->b) || !isfinite(data->c));
 
         double b_ = data->b;
         double c_ = data->c;

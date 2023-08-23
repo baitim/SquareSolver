@@ -40,9 +40,9 @@ bool is_correct_start_input(int argc, char *argv[], coefs_roots *data_start);
 
 bool is_test_on(int argc, char *argv[]);
 
-void check_test(double a_, double b_, double c_, double root1_, double root2_, number_roots roots);
-
 void test();
+
+void check_test(double a_, double b_, double c_, double root1_, double root2_, int roots);
 
 void print_roots(coefs_roots data);
 
@@ -59,4 +59,3 @@ void calculation_linear(coefs_roots *data);
 bool is_double_equal(double x, double y);
 
 #endif
-//

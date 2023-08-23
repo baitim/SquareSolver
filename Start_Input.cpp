@@ -8,7 +8,8 @@
 #include "Names.h"
 
 //
-void start_input(int argc, char *argv[]) {
+void start_input(int argc, char *argv[])
+{
         coefs_roots data_start = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
         if (is_correct_start_input(argc, argv, &data_start)) {
                 calculation_of_roots(&data_start);
@@ -18,7 +19,8 @@ void start_input(int argc, char *argv[]) {
 }
 
 // check if "-a" && "-b" && "-c" in input and write them in data_start
-bool is_correct_start_input(int argc, char *argv[], coefs_roots *data_start) {
+bool is_correct_start_input(int argc, char *argv[], coefs_roots *data_start)
+{
         int a = 0;
         int b = 0;
         int c = 0;

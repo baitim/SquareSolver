@@ -22,7 +22,7 @@ bool input_coefficients_or_exit(coefs_roots *data)
                            " equation a*x^2 + b*x + c = 0 separated by a space\n" ANSI_DEFAULT_COLOUR);
 
         while (true) {
-                int count_input = scanf("%lf%lf%lf", &data->a, &data->b, &data->c);
+                int count_input = scanf("%lf %lf %lf", &data->a, &data->b, &data->c);
 
                 switch (check_input(count_input)) {
                 case USER_CONTINUE:
@@ -48,7 +48,7 @@ user_choice check_input(int count_input)
                 int x = -1;
                 while (true) {
                         printf (ANSI_LIGHT_RED "Incorrect input, input: "
-                                                 "0 - to exit, 1 - to continue\n" ANSI_DEFAULT_COLOUR);
+                                               "0 - to exit, 1 - to continue\n" ANSI_DEFAULT_COLOUR);
                         int count_x = scanf("%d", &x);
 
                         if (is_input_empty() && count_x == 1 && (x == 1 or x == 0)) {
