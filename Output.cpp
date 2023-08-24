@@ -5,7 +5,6 @@
 #include "Check_errors.h"
 #include "Input_output.h"
 
-/// the function prints the number of roots and the roots
 void print_roots(coefs_roots *data)
 {
         number_roots roots = data->count_root;

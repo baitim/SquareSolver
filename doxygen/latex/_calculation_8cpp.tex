@@ -1,5 +1,5 @@
-\doxysection{C\+:/\+Users/timur/\+One\+Drive/Документы/\+Git\+Hub/\+Square\+Solver/\+Calculation.cpp File Reference}
-\hypertarget{_calculation_8cpp}{}\label{_calculation_8cpp}\index{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Calculation.cpp@{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Calculation.cpp}}
+\doxysection{D\+:/\+Solves/\+Square\+Solver/\+Calculation.cpp File Reference}
+\hypertarget{_calculation_8cpp}{}\label{_calculation_8cpp}\index{D:/Solves/SquareSolver/Calculation.cpp@{D:/Solves/SquareSolver/Calculation.cpp}}
 {\ttfamily \#include $<$TXLib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
@@ -10,15 +10,15 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38}{calculation\+\_\+of\+\_\+roots}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}data)
-\item 
+\begin{DoxyCompactList}\small\item\em Function calculate roots if equation is quadratic. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_calculation_8cpp_a389ea9d44e73d7d4d085e215e2c5b2f3}{calculation\+\_\+linear}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}data)
-\item 
+\begin{DoxyCompactList}\small\item\em Function calculate roots if equation is linear. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_calculation_8cpp_a4aa8d73f550018486e8f33273aac59e1}{is\+\_\+double\+\_\+equal}} (double x, double y)
-\item 
+\begin{DoxyCompactList}\small\item\em Function compare doubles. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_calculation_8cpp_a28b71efbf707fd53761b44387ddafa83}{is\+\_\+double\+\_\+greater}} (double x, double y)
-\item 
+\begin{DoxyCompactList}\small\item\em Function compare doubles. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_calculation_8cpp_adf4c0baf90bdac9fbbab8f69bc5d79d5}{is\+\_\+double\+\_\+less}} (double x, double y)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function compare doubles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -28,27 +28,83 @@ bool \mbox{\hyperlink{_calculation_8cpp_adf4c0baf90bdac9fbbab8f69bc5d79d5}{is\+\
 \doxysubsubsection{\texorpdfstring{calculation\_linear()}{calculation\_linear()}}
 {\footnotesize\ttfamily void calculation\+\_\+linear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
 
-\Hypertarget{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38}\label{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38} 
+
+
+Function calculate roots if equation is linear. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & struct, include coefs and roots \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & struct, include coefs and roots\\
+\hline
+\end{DoxyParams}
+Function change root1, root2 and number\+\_\+of\+\_\+roots. \Hypertarget{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38}\label{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38} 
 \index{Calculation.cpp@{Calculation.cpp}!calculation\_of\_roots@{calculation\_of\_roots}}
 \index{calculation\_of\_roots@{calculation\_of\_roots}!Calculation.cpp@{Calculation.cpp}}
 \doxysubsubsection{\texorpdfstring{calculation\_of\_roots()}{calculation\_of\_roots()}}
 {\footnotesize\ttfamily void calculation\+\_\+of\+\_\+roots (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
 
-\Hypertarget{_calculation_8cpp_a4aa8d73f550018486e8f33273aac59e1}\label{_calculation_8cpp_a4aa8d73f550018486e8f33273aac59e1} 
+
+
+Function calculate roots if equation is quadratic. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & struct, include coefs and roots \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & struct, include coefs and roots\\
+\hline
+\end{DoxyParams}
+Function change root1, root2 and number\+\_\+of\+\_\+roots. \Hypertarget{_calculation_8cpp_a4aa8d73f550018486e8f33273aac59e1}\label{_calculation_8cpp_a4aa8d73f550018486e8f33273aac59e1} 
 \index{Calculation.cpp@{Calculation.cpp}!is\_double\_equal@{is\_double\_equal}}
 \index{is\_double\_equal@{is\_double\_equal}!Calculation.cpp@{Calculation.cpp}}
 \doxysubsubsection{\texorpdfstring{is\_double\_equal()}{is\_double\_equal()}}
 {\footnotesize\ttfamily bool is\+\_\+double\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
 
-\Hypertarget{_calculation_8cpp_a28b71efbf707fd53761b44387ddafa83}\label{_calculation_8cpp_a28b71efbf707fd53761b44387ddafa83} 
+
+
+Function compare doubles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & first double \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & second double\\
+\hline
+\end{DoxyParams}
+if double is equal function return true else return false. \Hypertarget{_calculation_8cpp_a28b71efbf707fd53761b44387ddafa83}\label{_calculation_8cpp_a28b71efbf707fd53761b44387ddafa83} 
 \index{Calculation.cpp@{Calculation.cpp}!is\_double\_greater@{is\_double\_greater}}
 \index{is\_double\_greater@{is\_double\_greater}!Calculation.cpp@{Calculation.cpp}}
 \doxysubsubsection{\texorpdfstring{is\_double\_greater()}{is\_double\_greater()}}
 {\footnotesize\ttfamily bool is\+\_\+double\+\_\+greater (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
 
-\Hypertarget{_calculation_8cpp_adf4c0baf90bdac9fbbab8f69bc5d79d5}\label{_calculation_8cpp_adf4c0baf90bdac9fbbab8f69bc5d79d5} 
+
+
+Function compare doubles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & first double \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & second double\\
+\hline
+\end{DoxyParams}
+if first double greater function return true else return false. \Hypertarget{_calculation_8cpp_adf4c0baf90bdac9fbbab8f69bc5d79d5}\label{_calculation_8cpp_adf4c0baf90bdac9fbbab8f69bc5d79d5} 
 \index{Calculation.cpp@{Calculation.cpp}!is\_double\_less@{is\_double\_less}}
 \index{is\_double\_less@{is\_double\_less}!Calculation.cpp@{Calculation.cpp}}
 \doxysubsubsection{\texorpdfstring{is\_double\_less()}{is\_double\_less()}}
 {\footnotesize\ttfamily bool is\+\_\+double\+\_\+less (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
 
+
+
+Function compare doubles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & first double \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & second double\\
+\hline
+\end{DoxyParams}
+if first double less function return true else return false. 

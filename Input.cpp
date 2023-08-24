@@ -8,7 +8,7 @@
 // the function reads the coefficients and sends them for verification
 bool input_coefficients_or_exit(coefs_roots *data)
 {
-        ASSERT(data != NULL);
+        ASSERT(data);
 
         printf(ANSI_YELLOW "Enter e to exit or something else to continue\n" ANSI_DEFAULT_COLOR);
         char c = '$';
@@ -63,11 +63,12 @@ user_choice check_input(int count_input)
 
 bool is_input_empty()
 {
-        bool is_empty_ = true;
+        bool is_empty = true;
         char c = '$';
+        //int c
         while ((c = (char)getchar()) != '\n') {
                 if (c != ' ' && c != '\t')
-                        is_empty_ = false;
+                        is_empty = false;
         }
-        return is_empty_;
+        return is_empty;
 }

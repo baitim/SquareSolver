@@ -1,5 +1,5 @@
-\doxysection{C\+:/\+Users/timur/\+One\+Drive/Документы/\+Git\+Hub/\+Square\+Solver/\+Check\+\_\+errors.h File Reference}
-\hypertarget{_check__errors_8h}{}\label{_check__errors_8h}\index{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Check\_errors.h@{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Check\_errors.h}}
+\doxysection{D\+:/\+Solves/\+Square\+Solver/\+Check\+\_\+errors.h File Reference}
+\hypertarget{_check__errors_8h}{}\label{_check__errors_8h}\index{D:/Solves/SquareSolver/Check\_errors.h@{D:/Solves/SquareSolver/Check\_errors.h}}
 {\ttfamily \#include \"{}ANSI\+\_\+colours.\+h\"{}}\newline
 {\ttfamily \#include \"{}Input\+\_\+output.\+h\"{}}\newline
 \doxysubsubsection*{Macros}
@@ -13,9 +13,9 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_check__errors_8h_a908d50f5319181a01c30d4b907281266}{test}} (\mbox{\hyperlink{structcmd__input__data}{cmd\+\_\+input\+\_\+data}} \texorpdfstring{$\ast$}{*}cmd\+\_\+data)
-\item 
+\begin{DoxyCompactList}\small\item\em Function checks if test\+\_\+on and testing. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_check__errors_8h_a9a97a839220eecc01d90cce8bf2c81b5}{check\+\_\+test}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}test\+\_\+data)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function compares reference roots and number of them with calculated roots and number of them. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -51,9 +51,28 @@ int \mbox{\hyperlink{_check__errors_8h_a9a97a839220eecc01d90cce8bf2c81b5}{check\
 \doxysubsubsection{\texorpdfstring{check\_test()}{check\_test()}}
 {\footnotesize\ttfamily int check\+\_\+test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}}]{test\+\_\+data }\end{DoxyParamCaption})}
 
-\Hypertarget{_check__errors_8h_a908d50f5319181a01c30d4b907281266}\label{_check__errors_8h_a908d50f5319181a01c30d4b907281266} 
+
+
+Function compares reference roots and number of them with calculated roots and number of them. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em test\+\_\+data} & struct for compare, include reference roots, number of roots and coefficients\\
+\hline
+\end{DoxyParams}
+Function return 1 if test is OK or 0 if test failed. \Hypertarget{_check__errors_8h_a908d50f5319181a01c30d4b907281266}\label{_check__errors_8h_a908d50f5319181a01c30d4b907281266} 
 \index{Check\_errors.h@{Check\_errors.h}!test@{test}}
 \index{test@{test}!Check\_errors.h@{Check\_errors.h}}
 \doxysubsubsection{\texorpdfstring{test()}{test()}}
 {\footnotesize\ttfamily void test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__input__data}{cmd\+\_\+input\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{cmd\+\_\+data }\end{DoxyParamCaption})}
 
+
+
+Function checks if test\+\_\+on and testing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd\+\_\+data} & struct of data from cmd\\
+\hline
+\end{DoxyParams}
+Function checks if file of test correct and run check\+\_\+test. 

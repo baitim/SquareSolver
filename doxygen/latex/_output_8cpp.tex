@@ -1,5 +1,5 @@
-\doxysection{C\+:/\+Users/timur/\+One\+Drive/Документы/\+Git\+Hub/\+Square\+Solver/\+Output.cpp File Reference}
-\hypertarget{_output_8cpp}{}\label{_output_8cpp}\index{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Output.cpp@{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Output.cpp}}
+\doxysection{D\+:/\+Solves/\+Square\+Solver/\+Output.cpp File Reference}
+\hypertarget{_output_8cpp}{}\label{_output_8cpp}\index{D:/Solves/SquareSolver/Output.cpp@{D:/Solves/SquareSolver/Output.cpp}}
 {\ttfamily \#include $<$TXLib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include \"{}ANSI\+\_\+colours.\+h\"{}}\newline
@@ -9,7 +9,7 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_output_8cpp_a89a975d394e8b18ce4819ccf819d3f43}{print\+\_\+roots}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}data)
-\begin{DoxyCompactList}\small\item\em the function prints the number of roots and the roots \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function prints the number of roots and the roots. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -21,13 +21,16 @@ void \mbox{\hyperlink{_output_8cpp_a89a975d394e8b18ce4819ccf819d3f43}{print\+\_\
 
 
 
-the function prints the number of roots and the roots 
+Function prints the number of roots and the roots. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em data} & \\
+\mbox{\texttt{ in}}  & {\em data} & struct, include coefs and roots\\
 \hline
 \end{DoxyParams}
-Краткое описание и его продолжение.
-
-Подробное описание 
+Function has 5 type of print\+:~\newline
+1 -\/ 0 roots~\newline
+2 -\/ 1 root (equation is quadratic)~\newline
+3 -\/ 2 roots (equation is quadratic)~\newline
+4 -\/ 1 root (equation is linear)~\newline
+5 -\/ infinity number of roots~\newline

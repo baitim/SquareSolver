@@ -1,15 +1,23 @@
 #ifndef INPUT_OUTPUT_H
 #define INPUT_OUTPUT_H
 
+/// root number cases
 enum number_roots {
-        ROOT_0,
-        ROOT_1_QUAD,
-        ROOT_2_QUAD,
-        ROOT_1_LINE,
-        ROOT_INF,
-        ROOT_ERR
+        ROOT_0, ///< 0 roots
+        ROOT_1_QUAD, ///< 1 root, equation quadratic
+        ROOT_2_QUAD, ///< 2 roots, equation quadratic
+        ROOT_1_LINE, ///< 1 root, equation linear
+        ROOT_INF, ///< infinite number of roots
+        ROOT_ERR ///< error, will assert(0)
 };
 
+/**@struct foreignstruct
+*@brief This structure has coefficients, roots and number of roots
+*@var foreignstruct::a
+*Member 'a' contains...
+*@var foreignstruct::b
+*Member 'b' contains...
+*/
 struct coefs_roots {
         double a, b, c;
         double root1, root2;
@@ -23,20 +31,56 @@ struct cmd_input_data {
         char *name_test_file;
 };
 
+/// user choice, user can continue, get answer or exit
 enum user_choice {
-        USER_CONTINUE,
-        USER_CORRECT,
-        USER_EXIT
+        USER_CONTINUE, ///< if input coefficients was incorrect. user continue input them
+        USER_CORRECT, ///< if input was correct will run calculate roots
+        USER_EXIT ///< user want to exit
 };
 
+/*!
+@brief Function prints the number of roots and the roots.
+@param[in] data struct, include coefs and roots
+@details Function has 5 type of print:\n
+1 - 0 roots\n
+2 - 1 root (equation is quadratic)\n
+3 - 2 roots (equation is quadratic)\n
+4 - 1 root (equation is linear)\n
+5 - infinity number of roots\n
+*/
 void print_roots(coefs_roots *data);
 
+/*!
+@brief Function reads all data from cmd.
+@param[in] argc count of strings from cmd
+@param[in] argv strings from cmd
+@param[out] cmd_data struct of data from cmd
+@details Function can read 4 flags:\n
+ -test_on\n
+ -a\n
+ -b\n
+ -c\n
+*/
 void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data);
 
+/*!
+@brief Function reads coefficients.
+@param[in] data struct, include coefs and roots
+@details Function continue reads input if user inputs mistake and offers exit.
+*/
 bool input_coefficients_or_exit(coefs_roots *data);
 
+/*!
+@brief Function checks for correct input.
+@param[in] count_input count of correct coefficients
+@details Function continue reads input if user inputs mistake, user exit or user continue input coefficients.
+*/
 user_choice check_input(int count_input);
 
+/*!
+@brief Function checks for empty input.
+@details Function return true if input empty.
+*/
 bool is_input_empty();
 
 #endif // INPUT_OUTPUT_H
