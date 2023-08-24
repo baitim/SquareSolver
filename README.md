@@ -15,10 +15,10 @@
 3. Run <br>
         write <code>.\start.exe</code> in terminal
 
-<p align="center"><img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="50%"></p>
-
 <p align="center"><img src="/images/install_1.png" width = "70%"></p>
 <p align="center"><img src="/images/install_2.png" width = "70%"></p>
+
+<p align="center"><img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="50%"></p>
 
 ## Feats
 
