@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "Defines_enums_structs_const.h"
-#include "Prototypes_functions.h"
+#include "Check_errors.h"
+#include "Calculation.h"
+#include "Input_output.h"
 
 // the function calculates the roots
 void calculation_of_roots(coefs_roots *data)
@@ -31,7 +32,7 @@ void calculation_of_roots(coefs_roots *data)
                 data->count_root = ROOT_1_QUAD;
                 return;
         }
-        if (is_double_qreater(discriminant, 0)) {
+        if (is_double_greater(discriminant, 0)) {
                 data->root1 = (-b_ - discriminant_sqrt) / 2 / a_;
                 data->root2 = (-b_ + discriminant_sqrt) / 2 / a_;
                 data->count_root = ROOT_2_QUAD;
@@ -62,7 +63,7 @@ bool is_double_equal(double x, double y)
         return (fabs(x - y) <= EPSILON);
 }
 
-bool is_double_qreater(double x, double y)
+bool is_double_greater(double x, double y)
 {
         return ((x - y) >= EPSILON);
 }

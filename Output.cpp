@@ -1,8 +1,9 @@
 #include <TXLib.h>
 #include <stdio.h>
 
-#include "Defines_enums_structs_const.h"
-#include "Prototypes_functions.h"
+#include "ANSI_colours.h"
+#include "Check_errors.h"
+#include "Input_output.h"
 
 // the function prints the number of roots and the roots
 void print_roots(coefs_roots data)

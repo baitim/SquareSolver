@@ -1,8 +1,10 @@
 #include <TXLib.h>
 #include <stdio.h>
 
-#include "Defines_enums_structs_const.h"
-#include "Prototypes_functions.h"
+#include "Check_errors.h"
+#include "ANSI_colours.h"
+#include "Calculation.h"
+#include "Input_output.h"
 
 int main (int argc, char *argv[])
 {

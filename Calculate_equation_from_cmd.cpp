@@ -1,8 +1,8 @@
 #include <TXLib.h>
 #include <stdio.h>
 
-#include "Defines_enums_structs_const.h"
-#include "Prototypes_functions.h"
+#include "ANSI_colours.h"
+#include "Calculation.h"
 
 void calculate_equation_from_cmd(cmd_input_data cmd_data)
 {
