@@ -64,10 +64,9 @@ user_choice check_input(int count_input)
 bool is_input_empty()
 {
         bool is_empty = true;
-        char c = '$';
-        //int c
-        while ((c = (char)getchar()) != '\n') {
-                if (c != ' ' && c != '\t')
+        int c = 0;
+        while ((c = getchar()) != 10) { // '\n'
+                if (c != 32 && c != 9)  // ' ', '\t'
                         is_empty = false;
         }
         return is_empty;
