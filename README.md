@@ -17,7 +17,8 @@
 
 <p align="center"><img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="50%"></p>
 
-<p align="center"><img src="/images/install_1.png" width = "45%"> <img src="/images/install_2.png" width = "45%"></p>
+<p align="center"><img src="/images/install_1.png" width = "70%"></p>
+<p align="center"><img src="/images/install_2.png" width = "70%"></p>
 
 ## Feats
 
