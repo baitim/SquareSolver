@@ -1,7 +1,7 @@
 var searchData=
 [
   ['c_0',['c',['../structcoefs__roots.html#a847264e05c7d5b34d08120b097c0b598',1,'coefs_roots::c'],['../structcmd__input__data.html#a6e33f24e31373b249188f8c0fa7c8ea0',1,'cmd_input_data::c']]],
-  ['calculate_5fequation_5ffrom_5fcmd_1',['calculate_equation_from_cmd',['../_calculate__equation__from__cmd_8cpp.html#a147360c045d00fa80fa021241699fe23',1,'calculate_equation_from_cmd(cmd_input_data cmd_data):&#160;Calculate_equation_from_cmd.cpp'],['../_calculation_8h.html#a147360c045d00fa80fa021241699fe23',1,'calculate_equation_from_cmd(cmd_input_data cmd_data):&#160;Calculate_equation_from_cmd.cpp']]],
+  ['calculate_5fequation_5ffrom_5fcmd_1',['calculate_equation_from_cmd',['../_calculate__equation__from__cmd_8cpp.html#a7bd63fced8bd1530a73cbf34341599bc',1,'calculate_equation_from_cmd(cmd_input_data *cmd_data):&#160;Calculate_equation_from_cmd.cpp'],['../_calculation_8h.html#a7bd63fced8bd1530a73cbf34341599bc',1,'calculate_equation_from_cmd(cmd_input_data *cmd_data):&#160;Calculate_equation_from_cmd.cpp']]],
   ['calculate_5fequation_5ffrom_5fcmd_2ecpp_2',['Calculate_equation_from_cmd.cpp',['../_calculate__equation__from__cmd_8cpp.html',1,'']]],
   ['calculation_2ecpp_3',['Calculation.cpp',['../_calculation_8cpp.html',1,'']]],
   ['calculation_2eh_4',['Calculation.h',['../_calculation_8h.html',1,'']]],

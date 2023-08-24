@@ -6,13 +6,6 @@
 #include "Input_output.h"
 
 /// the function prints the number of roots and the roots
-/*!
-        \param[in] data
-        \brief Краткое описание и
-                его продолжение.
-
-        Подробное описание
- */
 void print_roots(coefs_roots *data)
 {
         number_roots roots = data->count_root;

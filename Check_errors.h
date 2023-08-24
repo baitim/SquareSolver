@@ -19,7 +19,7 @@
 #define ASSERT(...)
 #endif
 
-void test(cmd_input_data cmd_data);
+void test(cmd_input_data *cmd_data);
 
 int check_test(coefs_roots *test_data);
 

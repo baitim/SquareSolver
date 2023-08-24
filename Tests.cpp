@@ -9,10 +9,10 @@
 #ifdef TEST_ON
 
 // the function tests calculation
-void test(cmd_input_data cmd_data)
+void test(cmd_input_data *cmd_data)
 {
         FILE *fp = 0;
-        if ((fp = fopen(cmd_data.name_test_file, "r")) == NULL)
+        if ((fp = fopen(cmd_data->name_test_file, "r")) == NULL)
         {
                 printf(ANSI_LIGHT_RED "Test file read error\n\n" ANSI_DEFAULT_COLOR);
                 return;

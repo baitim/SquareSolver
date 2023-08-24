@@ -17,7 +17,7 @@ int main (int argc, char *argv[])
 
         #ifdef TEST_ON
                 if (cmd_data.is_coeffs_input)
-                        test(cmd_data);
+                        test(&cmd_data);
         #endif
 
         calculate_equation_from_cmd(&cmd_data);
