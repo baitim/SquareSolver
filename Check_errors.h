@@ -12,7 +12,7 @@
                 printf(ANSI_LIGHT_RED "Text in assert: (%s)\n", #x);\
                 printf("File: %s\n", __FILE__);\
                 printf("Function: %s\n", __PRETTY_FUNCTION__);\
-                printf("Line: %d\n" ANSI_DEFAULT_COLOUR, __LINE__);\
+                printf("Line: %d\n" ANSI_DEFAULT_COLOR, __LINE__);\
                 exit(0);\
         }
 #else

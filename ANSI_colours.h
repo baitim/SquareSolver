@@ -1,7 +1,7 @@
 #ifndef ANSI_COLOURS_H
 #define ANSI_COLOURS_H
 
-#define ANSI_DEFAULT_COLOUR  "\033[0m"
+#define ANSI_DEFAULT_COLOR  "\033[0m"
 #define ANSI_YELLOW          "\033[33m"
 #define ANSI_LIGHT_RED       "\033[91m"
 #define ANSI_LIGHT_GREEN     "\033[92m"

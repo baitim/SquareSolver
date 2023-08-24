@@ -9,7 +9,7 @@
 int main (int argc, char *argv[])
 {
         printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
-               "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOUR);
+               "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOR);
 
 
         cmd_input_data cmd_data = { false, 0.0f, 0.0f, 0.0f, false, nullptr };
@@ -29,7 +29,7 @@ int main (int argc, char *argv[])
                 print_roots(data);
         }
 
-        printf(ANSI_LIGHT_BLUE "Bye\n" ANSI_DEFAULT_COLOUR);
+        printf(ANSI_LIGHT_BLUE "Bye\n" ANSI_DEFAULT_COLOR);
 
         return 0;
 }

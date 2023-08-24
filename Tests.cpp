@@ -11,10 +11,10 @@
 // the function tests calculation
 void test(cmd_input_data cmd_data)
 {
-        FILE *fp;
+        FILE *fp = 0;
         if ((fp = fopen(cmd_data.name_test_file, "r")) == NULL)
         {
-                printf(ANSI_LIGHT_RED "Test file read error\n\n" ANSI_DEFAULT_COLOUR);
+                printf(ANSI_LIGHT_RED "Test file read error\n\n" ANSI_DEFAULT_COLOR);
                 return;
         }
 
@@ -23,9 +23,12 @@ void test(cmd_input_data cmd_data)
         while (true) {
                 coefs_roots test_data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 
+                int count_root_ = 0;
                 int count_input = fscanf(fp, "%lg %lg %lg %lg %lg %d", &test_data.a,
                                          &test_data.b, &test_data.c, &test_data.root1,
-                                         &test_data.root2, &test_data.count_root);
+                                         &test_data.root2, &count_root_);
+                ASSERT((count_root_ >= 0) && (count_root_ <= 4));
+                test_data.count_root = (number_roots)count_root_;
 
                 if (count_input != 6)
                         break;
@@ -36,7 +39,7 @@ void test(cmd_input_data cmd_data)
                 return;
 
         fclose(fp);
-        printf(ANSI_LIGHT_GREEN "ALL TESTS ACCEPTED\n\n" ANSI_DEFAULT_COLOUR);
+        printf(ANSI_LIGHT_GREEN "ALL TESTS ACCEPTED\n\n" ANSI_DEFAULT_COLOR);
 }
 
 // the function compares calculation and input
@@ -60,7 +63,7 @@ int check_test(coefs_roots *test_data)
 
         if ((!(is_double_equal(x1_ref, x2) && is_double_equal(x2_ref, x1)) && !(is_double_equal(x1_ref, x1) && is_double_equal(x2_ref, x2))) || !(nRoots_ref == nRoots)) {
                 printf(ANSI_LIGHT_RED "Failed: x1 = %lg, x2 = %lg, roots = %d; expected:"
-                                      "x1ref = %lg, x2ref = %lg, roots_ref = %d\n\n" ANSI_DEFAULT_COLOUR,
+                                      "x1ref = %lg, x2ref = %lg, roots_ref = %d\n\n" ANSI_DEFAULT_COLOR,
                                       data_.root1, data_.root2, data_.count_root, test_data->root1, test_data->root2, test_data->count_root);
                 return 0;
         }
