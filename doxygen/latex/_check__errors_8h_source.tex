@@ -11,22 +11,24 @@
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_input__output_8h}{Input\_output.h}}"{}}}
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ NDEBUG}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ASSERT(x)\(\backslash\)}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (!(x))\ \{\(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ASSERT(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (!(x))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(ANSI\_LIGHT\_RED\ "{}Text\ in\ assert:\ (\%s)\(\backslash\)n"{}},\ \#x);\(\backslash\)}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}File:\ \%s\(\backslash\)n"{},\ \_\_FILE\_\_);\(\backslash\)}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}Function:\ \%s\(\backslash\)n"{},\ \_\_PRETTY\_FUNCTION\_\_);\(\backslash\)}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}Line:\ \%d\(\backslash\)n"{}\ ANSI\_DEFAULT\_COLOR,\ \_\_LINE\_\_);\(\backslash\)}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit(0);\(\backslash\)}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}File:\ \%s\(\backslash\)n"{},\ \_\_FILE\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}Function:\ \%s\(\backslash\)n"{},\ \_\_PRETTY\_FUNCTION\_\_);\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}Line:\ \%d\(\backslash\)n"{}\ ANSI\_DEFAULT\_COLOR,\ \_\_LINE\_\_);\ \ \(\backslash\)}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit(0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00018\ \textcolor{preprocessor}{\#else}}
 \DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ ASSERT(...)}}
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_check__errors_8h_a908d50f5319181a01c30d4b907281266}{test}}(\mbox{\hyperlink{structcmd__input__data}{cmd\_input\_data}}\ *cmd\_data);}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00034\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_check__errors_8h_a9a97a839220eecc01d90cce8bf2c81b5}{check\_test}}(\mbox{\hyperlink{structcoefs__roots}{coefs\_roots}}\ *test\_data);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHECK\_ERRORS\_H}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_check__errors_8h_a005d644ae30c05304bc5144d913f28b6}{nTests}}\ =\ 5;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_check__errors_8h_a908d50f5319181a01c30d4b907281266}{test}}(\mbox{\hyperlink{structcmd__input__data}{cmd\_input\_data}}\ *cmd\_data);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_check__errors_8h_a9a97a839220eecc01d90cce8bf2c81b5}{check\_test}}(\mbox{\hyperlink{structcoefs__roots}{coefs\_roots}}\ *test\_data);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHECK\_ERRORS\_H}}
 
 \end{DoxyCode}

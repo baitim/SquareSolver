@@ -20,18 +20,19 @@ void test(cmd_input_data *cmd_data)
         int is_OK = 1;
 
         while (true) {
-                coefs_roots test_data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
+                coefficients coefs = { 0.0f, 0.0f, 0.0f };
+                roots_struct roots = { 0.0f, 0.0f, ROOT_ERR };
 
                 int count_root_ = 0;
-                int count_input = fscanf(fp, "%lg %lg %lg %lg %lg %d", &test_data.a,
-                                         &test_data.b, &test_data.c, &test_data.root1,
-                                         &test_data.root2, &count_root_);
+                int count_input = fscanf(fp, "%lg %lg %lg %lg %lg %d", &coefs.a,
+                                         &coefs.b, &coefs.c, &roots.root1,
+                                         &roots.root2, &count_root_);
                 ASSERT((count_root_ >= 0) && (count_root_ <= 4));
-                test_data.count_root = (number_roots)count_root_;
+                roots.count_root = (number_roots)count_root_;
 
                 if (count_input > nTests)
                         break;
-                is_OK = min(is_OK, check_test(&test_data));
+                is_OK = min(is_OK, check_test(&coefs, &roots));
         }
 
         if (!is_OK)
@@ -41,31 +42,32 @@ void test(cmd_input_data *cmd_data)
         printf(ANSI_LIGHT_GREEN "ALL TESTS ACCEPTED\n\n" ANSI_DEFAULT_COLOR);
 }
 
-int check_test(coefs_roots *test_data)
+int check_test(coefficients *coefs_t, roots_struct *roots_t)
 {
-        coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
+        coefficients coefs = { 0.0f, 0.0f, 0.0f };
+        roots_struct roots = { 0.0f, 0.0f, ROOT_ERR };
 
-        data.a = test_data->a;
-        data.b = test_data->b;
-        data.c = test_data->c;
+        coefs.a = coefs_t->a;
+        coefs.b = coefs_t->b;
+        coefs.c = coefs_t->c;
 
-        calculation_of_roots(&data);
+        calculation_of_roots(&coefs, &roots);
 
-        double x1_ref = test_data->root1;
-        double x2_ref = test_data->root2;
-        number_roots nRoots_ref = test_data->count_root;
+        double x1_ref = roots_t->root1;
+        double x2_ref = roots_t->root2;
+        number_roots nRoots_ref = roots_t->count_root;
 
-        double x1 = data.root1;
-        double x2 = data.root2;
-        number_roots nRoots = data.count_root;
+        double x1 = roots.root1;
+        double x2 = roots.root2;
+        number_roots nRoots = roots.count_root;
 
         if ((!(is_double_equal(x1_ref, x2) && is_double_equal(x2_ref, x1)) &&
                !(is_double_equal(x1_ref, x1) && is_double_equal(x2_ref, x2)))
                  || !(nRoots_ref == nRoots)) {
                 printf(ANSI_LIGHT_RED "Failed: x1 = %lg, x2 = %lg, roots = %d; expected:"
                                       "x1ref = %lg, x2ref = %lg, roots_ref = %d\n\n" ANSI_DEFAULT_COLOR,
-                                      data.root1, data.root2, data.count_root, test_data->root1,
-                                      test_data->root2, test_data->count_root);
+                                      roots.root1, roots.root2, roots.count_root, roots_t->root1,
+                                      roots_t->root2, roots_t->count_root);
                 return 0;
         }
         return 1;

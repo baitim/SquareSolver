@@ -6,9 +6,9 @@
 #include "Input_output.h"
 
 // the function reads the coefficients and sends them for verification
-bool input_coefficients_or_exit(coefs_roots *data)
+bool input_coefficients_or_exit(coefficients *coefs)
 {
-        ASSERT(data);
+        ASSERT(coefs);
 
         printf(ANSI_YELLOW "Enter e to exit or something else to continue\n" ANSI_DEFAULT_COLOR);
         char c = '$';
@@ -20,7 +20,7 @@ bool input_coefficients_or_exit(coefs_roots *data)
                            " equation a*x^2 + b*x + c = 0 separated by a space or enter\n" ANSI_DEFAULT_COLOR);
 
         while (true) {
-                int count_input = scanf("%lg %lg %lg", &data->a, &data->b, &data->c);
+                int count_input = scanf("%lg %lg %lg", &coefs->a, &coefs->b, &coefs->c);
 
                 switch (check_input(count_input)) {
                 case USER_CONTINUE:
@@ -65,8 +65,8 @@ bool is_input_empty()
 {
         bool is_empty = true;
         int c = 0;
-        while ((c = getchar()) != 10) { // '\n'
-                if (c != 32 && c != 9)  // ' ', '\t'
+        while ((c = getchar()) != '\n') { // '\n'
+                if (!isspace(c))  // ' ', '\t'
                         is_empty = false;
         }
         return is_empty;

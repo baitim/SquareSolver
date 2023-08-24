@@ -75,7 +75,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Check_errors.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -99,6 +100,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a9a97a839220eecc01d90cce8bf2c81b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_check__errors_8h.html#a9a97a839220eecc01d90cce8bf2c81b5">check_test</a> (<a class="el" href="structcoefs__roots.html">coefs_roots</a> *test_data)</td></tr>
 <tr class="memdesc:a9a97a839220eecc01d90cce8bf2c81b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function compares reference roots and number of them with calculated roots and number of them.  <br /></td></tr>
 <tr class="separator:a9a97a839220eecc01d90cce8bf2c81b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a005d644ae30c05304bc5144d913f28b6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_check__errors_8h.html#a005d644ae30c05304bc5144d913f28b6">nTests</a> = 5</td></tr>
+<tr class="separator:a005d644ae30c05304bc5144d913f28b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aca68c0d4ac8df0838e209fb5300f7be3" name="aca68c0d4ac8df0838e209fb5300f7be3"></a>
@@ -116,12 +122,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (!(x)) {\</div>
+<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (!(x)) {                                                 \</div>
 <div class="line">                printf(<a class="code hl_define" href="_a_n_s_i__colours_8h.html#a62b86d29721aeb3e4a37f501ec602eea">ANSI_LIGHT_RED</a> <span class="stringliteral">&quot;Text in assert: (%s)\n&quot;</span>, #x);\</div>
-<div class="line">                printf(<span class="stringliteral">&quot;File: %s\n&quot;</span>, __FILE__);\</div>
-<div class="line">                printf(<span class="stringliteral">&quot;Function: %s\n&quot;</span>, __PRETTY_FUNCTION__);\</div>
-<div class="line">                printf(<span class="stringliteral">&quot;Line: %d\n&quot;</span> <a class="code hl_define" href="_a_n_s_i__colours_8h.html#aa0ade98cdef069c48caf833c7e57ca44">ANSI_DEFAULT_COLOR</a>, __LINE__);\</div>
-<div class="line">                exit(0);\</div>
+<div class="line">                printf(<span class="stringliteral">&quot;File: %s\n&quot;</span>, __FILE__);                     \</div>
+<div class="line">                printf(<span class="stringliteral">&quot;Function: %s\n&quot;</span>, __PRETTY_FUNCTION__);      \</div>
+<div class="line">                printf(<span class="stringliteral">&quot;Line: %d\n&quot;</span> <a class="code hl_define" href="_a_n_s_i__colours_8h.html#aa0ade98cdef069c48caf833c7e57ca44">ANSI_DEFAULT_COLOR</a>, __LINE__);  \</div>
+<div class="line">                exit(0);                                            \</div>
 <div class="line">        }</div>
 <div class="ttc" id="a_a_n_s_i__colours_8h_html_a62b86d29721aeb3e4a37f501ec602eea"><div class="ttname"><a href="_a_n_s_i__colours_8h.html#a62b86d29721aeb3e4a37f501ec602eea">ANSI_LIGHT_RED</a></div><div class="ttdeci">#define ANSI_LIGHT_RED</div><div class="ttdef"><b>Definition</b> ANSI_colours.h:6</div></div>
 <div class="ttc" id="a_a_n_s_i__colours_8h_html_aa0ade98cdef069c48caf833c7e57ca44"><div class="ttname"><a href="_a_n_s_i__colours_8h.html#aa0ade98cdef069c48caf833c7e57ca44">ANSI_DEFAULT_COLOR</a></div><div class="ttdeci">#define ANSI_DEFAULT_COLOR</div><div class="ttdef"><b>Definition</b> ANSI_colours.h:4</div></div>
@@ -194,6 +200,21 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>Function checks if file of test correct and run check_test. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a005d644ae30c05304bc5144d913f28b6" name="a005d644ae30c05304bc5144d913f28b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005d644ae30c05304bc5144d913f28b6">&#9670;&#160;</a></span>nTests</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int nTests = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -22,11 +22,12 @@ int main (int argc, char *argv[])
 
         calculate_equation_from_cmd(&cmd_data);
 
-        coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
+        coefficients coefs = { 0.0f, 0.0f, 0.0f };
+        roots_struct roots = { 0.0f, 0.0f, ROOT_ERR };
 
-        while (input_coefficients_or_exit(&data)) {
-                calculation_of_roots(&data);
-                print_roots(&data);
+        while (input_coefficients_or_exit(&coefs)) {
+                calculation_of_roots(&coefs, &roots);
+                print_roots(&roots);
         }
 
         printf(ANSI_LIGHT_BLUE "Bye\n" ANSI_DEFAULT_COLOR);

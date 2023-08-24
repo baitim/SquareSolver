@@ -18,7 +18,7 @@ void calculate_equation_from_cmd(cmd_input_data *cmd_data);
 @param[out] data struct, include coefs and roots
 @details Function change root1, root2 and number_of_roots.
 */
-void calculation_of_roots(coefs_roots *data);
+void calculation_of_roots(const coefficients *coefs, roots_struct *roots);
 
 /*!
 @brief Function calculate roots if equation is linear.
@@ -26,7 +26,7 @@ void calculation_of_roots(coefs_roots *data);
 @param[out] data struct, include coefs and roots
 @details Function change root1, root2 and number_of_roots.
 */
-void calculation_linear(coefs_roots *data);
+void calculation_linear(const coefficients *coefs, roots_struct *roots);
 
 /*!
 @brief Function compare doubles.

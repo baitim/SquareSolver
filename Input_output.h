@@ -1,7 +1,7 @@
 #ifndef INPUT_OUTPUT_H
 #define INPUT_OUTPUT_H
 
-/// root number cases
+/// Root number cases.
 enum number_roots {
         ROOT_0, ///< 0 roots
         ROOT_1_QUAD, ///< 1 root, equation quadratic
@@ -11,17 +11,17 @@ enum number_roots {
         ROOT_ERR ///< error, will assert(0)
 };
 
-/**@struct foreignstruct
-*@brief This structure has coefficients, roots and number of roots
-*@var foreignstruct::a
-*Member 'a' contains...
-*@var foreignstruct::b
-*Member 'b' contains...
-*/
-struct coefs_roots {
-        double a, b, c;
-        double root1, root2;
-        number_roots count_root;
+/// Structure has coefficients, roots and number of roots.
+struct coefficients {
+        double a; ///< coefficient a
+        double b; ///< coefficient b
+        double c; ///< coefficient c
+};
+
+struct roots_struct {
+        double root1; ///< first root
+        double root2; ///< second root
+        number_roots count_root; ///< number roots cases
 };
 
 struct cmd_input_data {
@@ -31,7 +31,7 @@ struct cmd_input_data {
         char *name_test_file;
 };
 
-/// user choice, user can continue, get answer or exit
+/// User choice, user can continue, get answer or exit.
 enum user_choice {
         USER_CONTINUE, ///< if input coefficients was incorrect. user continue input them
         USER_CORRECT, ///< if input was correct will run calculate roots
@@ -48,7 +48,7 @@ enum user_choice {
 4 - 1 root (equation is linear)\n
 5 - infinity number of roots\n
 */
-void print_roots(coefs_roots *data);
+void print_roots(const roots_struct *roots);
 
 /*!
 @brief Function reads all data from cmd.
@@ -68,7 +68,7 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data);
 @param[in] data struct, include coefs and roots
 @details Function continue reads input if user inputs mistake and offers exit.
 */
-bool input_coefficients_or_exit(coefs_roots *data);
+bool input_coefficients_or_exit(coefficients *coefs);
 
 /*!
 @brief Function checks for correct input.

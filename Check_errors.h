@@ -33,6 +33,6 @@ void test(cmd_input_data *cmd_data);
 @param[in] test_data struct for compare, include reference roots, number of roots and coefficients
 @details Function return 1 if test is OK or 0 if test failed.
 */
-int check_test(coefs_roots *test_data);
+int check_test(coefficients *coefs_t, roots_struct *roots_t);
 
 #endif // CHECK_ERRORS_H
