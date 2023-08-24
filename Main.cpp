@@ -20,13 +20,13 @@ int main (int argc, char *argv[])
                         test(cmd_data);
         #endif
 
-        calculate_equation_from_cmd(cmd_data);
+        calculate_equation_from_cmd(&cmd_data);
 
         coefs_roots data = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, ROOT_ERR };
 
         while (input_coefficients_or_exit(&data)) {
                 calculation_of_roots(&data);
-                print_roots(data);
+                print_roots(&data);
         }
 
         printf(ANSI_LIGHT_BLUE "Bye\n" ANSI_DEFAULT_COLOR);

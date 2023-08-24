@@ -1,0 +1,32 @@
+\doxysection{Check\+\_\+errors.\+h}
+\hypertarget{_check__errors_8h_source}{}\label{_check__errors_8h_source}\index{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Check\_errors.h@{C:/Users/timur/OneDrive/Документы/GitHub/SquareSolver/Check\_errors.h}}
+\mbox{\hyperlink{_check__errors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CHECK\_ERRORS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CHECK\_ERRORS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ TEST\_ON}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_a_n_s_i__colours_8h}{ANSI\_colours.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_input__output_8h}{Input\_output.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ NDEBUG}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ASSERT(x)\(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (!(x))\ \{\(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(ANSI\_LIGHT\_RED\ "{}Text\ in\ assert:\ (\%s)\(\backslash\)n"{}},\ \#x);\(\backslash\)}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}File:\ \%s\(\backslash\)n"{},\ \_\_FILE\_\_);\(\backslash\)}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}Function:\ \%s\(\backslash\)n"{},\ \_\_PRETTY\_FUNCTION\_\_);\(\backslash\)}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}Line:\ \%d\(\backslash\)n"{}\ ANSI\_DEFAULT\_COLOR,\ \_\_LINE\_\_);\(\backslash\)}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit(0);\(\backslash\)}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ ASSERT(...)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_check__errors_8h_aeee77a83f9c4467c84c6b43cf915bfbd}{test}}(\mbox{\hyperlink{structcmd__input__data}{cmd\_input\_data}}\ cmd\_data);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_check__errors_8h_a9a97a839220eecc01d90cce8bf2c81b5}{check\_test}}(\mbox{\hyperlink{structcoefs__roots}{coefs\_roots}}\ *test\_data);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHECK\_ERRORS\_H}}
+
+\end{DoxyCode}

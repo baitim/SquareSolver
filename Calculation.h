@@ -5,7 +5,7 @@
 
 const double EPSILON = 1e-7;
 
-void calculate_equation_from_cmd(cmd_input_data cmd_data);
+void calculate_equation_from_cmd(cmd_input_data *cmd_data);
 
 void calculation_of_roots(coefs_roots *data);
 

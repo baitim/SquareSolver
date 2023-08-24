@@ -29,7 +29,7 @@ enum user_choice {
         USER_EXIT
 };
 
-void print_roots(coefs_roots data);
+void print_roots(coefs_roots *data);
 
 void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data);
 
