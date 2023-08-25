@@ -19,6 +19,19 @@ void calculation_of_roots(const coefficients *coefs, roots_struct *roots)
                 return;
         }
 
+        if (is_double_equal(c, 0)) { // calculation without discriminant
+                if (is_double_equal(b, 0)) {
+                        roots->root1 = roots->root2 = 0;
+                        roots->count_root = ROOT_1_QUAD;
+                } else {
+                        roots->root1 = 0;
+                        roots->root2 = -b / a;
+                        roots->count_root = ROOT_2_QUAD;
+                }
+                return;
+        }
+
+
         double discriminant = b * b - 4 * a * c;
         if (is_double_less(discriminant, 0)) {
                 roots->count_root = ROOT_0;
