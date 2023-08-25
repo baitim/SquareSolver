@@ -1,6 +1,8 @@
 #ifndef CHECK_ERRORS_H
 #define CHECK_ERRORS_H
 
+#include <stdlib.h>
+
 #define TEST_ON
 
 #include "ANSI_colours.h"

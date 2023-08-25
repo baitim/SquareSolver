@@ -1,5 +1,5 @@
-#include <TXLib.h>
 #include <stdio.h>
+#include <math.h>
 
 #include "ANSI_colours.h"
 #include "Check_errors.h"
@@ -32,7 +32,7 @@ void test(cmd_input_data *cmd_data)
 
                 if (count_input > nTests)
                         break;
-                is_OK = min(is_OK, check_test(&coefs, &roots));
+                is_OK = (is_OK > check_test(&coefs, &roots)) ? check_test(&coefs, &roots) : is_OK;
         }
 
         if (!is_OK)

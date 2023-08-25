@@ -7,13 +7,13 @@
 ## How to use
 
 1. Clone <br>
-    Write <code>git clone https://github.com/baitim/SquareSolver.git</code>
+    In git write <code>git clone https://github.com/baitim/SquareSolver.git</code>
 
 2. Build <br>
-    Write <code>make -B</code>
+        write <code>make -B</code> in terminal
 
 3. Run <br>
-    Write <code>.\start.exe</code>
+        write <code>.\start.exe</code> in terminal
 
 <p align="center"><img src="/images/install_1.png" width = "70%"></p>
 <p align="center"><img src="/images/install_2.png" width = "70%"></p>

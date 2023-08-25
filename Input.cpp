@@ -1,5 +1,5 @@
-#include <TXLib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 #include "ANSI_colours.h"
 #include "Check_errors.h"
@@ -33,7 +33,7 @@ bool input_coefficients_or_exit(coefficients *coefs)
                         return false;
                         break;
                 default:
-                        assert(0);
+                        ASSERT(0);
                         break;
                 }
         }
