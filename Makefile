@@ -2,7 +2,15 @@ options = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-eq
 
 debug =
 
-run : start.exe
+SOURCES = Main.cpp\
+Process_cmd.cpp\
+Calculate_equation_from_cmd.cpp\
+Input.cpp\
+Calculation.cpp\
+Output.cpp\
+Tests.cpp
+
+run : start.exe finish
 
 start.exe : Main.o Calculate_equation_from_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o
 	g++ Main.o Calculate_equation_from_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o -o start.exe
@@ -27,3 +35,6 @@ Output.o : Output.cpp
 
 Tests.o : Tests.cpp
 	g++ -c Tests.cpp -o Tests.o $(options) $(debug)
+
+finish :
+	rm Main.o Calculate_equation_from_cmd.o Input.o Calculation.o Output.o Tests.o Process_cmd.o

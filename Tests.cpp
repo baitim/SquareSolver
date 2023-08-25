@@ -1,15 +1,17 @@
+#include "ANSI_colors.h"
+#include "Calculation.h"
+#include "Check_errors.h"
+#include "Input_output.h"
+
 #include <stdio.h>
 #include <math.h>
-
-#include "ANSI_colours.h"
-#include "Check_errors.h"
-#include "Calculation.h"
-#include "Input_output.h"
 
 #ifdef TEST_ON
 
 void test(cmd_input_data *cmd_data)
 {
+        ASSERT(cmd_data);
+
         FILE *fp = nullptr;
         if ((fp = fopen(cmd_data->name_test_file, "r")) == NULL)
         {
@@ -30,44 +32,42 @@ void test(cmd_input_data *cmd_data)
                 ASSERT((count_root_ >= 0) && (count_root_ <= 4));
                 roots.count_root = (number_roots)count_root_;
 
-                if (count_input > nTests)
+                if (count_input != 6)
                         break;
-                is_OK = (is_OK > check_test(&coefs, &roots)) ? check_test(&coefs, &roots) : is_OK;
+                if(!check_test(&coefs, &roots))
+                        is_OK = 0;
         }
 
         if (!is_OK)
                 return;
 
         fclose(fp);
-        printf(ANSI_LIGHT_GREEN "ALL TESTS ACCEPTED\n\n" ANSI_DEFAULT_COLOR);
+        printf(ANSI_LIGHT_GREEN "ALL TESTS ACCEPTED\n\n" ANSI_DEFAULT_COLOR);   // ALL TESTS PASSED
 }
 
-int check_test(coefficients *coefs_t, roots_struct *roots_t)
+int check_test(coefficients *coefs, roots_struct *roots_ref)
 {
-        coefficients coefs = { 0.0f, 0.0f, 0.0f };
+        ASSERT(coefs && roots_ref);
+
         roots_struct roots = { 0.0f, 0.0f, ROOT_ERR };
 
-        coefs.a = coefs_t->a;
-        coefs.b = coefs_t->b;
-        coefs.c = coefs_t->c;
+        calculation_of_roots(coefs, &roots);
 
-        calculation_of_roots(&coefs, &roots);
-
-        double x1_ref = roots_t->root1;
-        double x2_ref = roots_t->root2;
-        number_roots nRoots_ref = roots_t->count_root;
+        double x1_ref = roots_ref->root1;
+        double x2_ref = roots_ref->root2;
+        number_roots nRoots_ref = roots_ref->count_root;
 
         double x1 = roots.root1;
         double x2 = roots.root2;
         number_roots nRoots = roots.count_root;
 
-        if ((!(is_double_equal(x1_ref, x2) && is_double_equal(x2_ref, x1)) &&
-               !(is_double_equal(x1_ref, x1) && is_double_equal(x2_ref, x2)))
-                 || !(nRoots_ref == nRoots)) {
+        if (!(nRoots_ref == nRoots) ||
+                (!(is_double_equal(x1_ref, x2) && is_double_equal(x2_ref, x1)) &&
+               !(is_double_equal(x1_ref, x1) && is_double_equal(x2_ref, x2))) ) {
                 printf(ANSI_LIGHT_RED "Failed: x1 = %lg, x2 = %lg, roots = %d; expected:"
                                       "x1ref = %lg, x2ref = %lg, roots_ref = %d\n\n" ANSI_DEFAULT_COLOR,
-                                      roots.root1, roots.root2, roots.count_root, roots_t->root1,
-                                      roots_t->root2, roots_t->count_root);
+                                      roots.root1, roots.root2, roots.count_root, roots_ref->root1,
+                                      roots_ref->root2, roots_ref->count_root);
                 return 0;
         }
         return 1;

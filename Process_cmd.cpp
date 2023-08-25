@@ -1,11 +1,14 @@
+#include "Check_errors.h"
+#include "Input_output.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "Input_output.h"
-
 void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
 {
+        ASSERT(argv && cmd_data);
+
         bool has_a = false;
         bool has_b = false;
         bool has_c = false;
@@ -16,7 +19,7 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
 
         for (int i = 0; i < argc; i++) {
                 if ((strcmp(argv[i], "-a") == 0) && (i < argc - 1)) {
-                        char *stopstring = nullptr;
+                        char *stopstring = nullptr;        // КОПИПААААААААААААСТТТТТТТТ
                         a = strtod(argv[i+1], &stopstring);
                         if (*stopstring != '\0') {
                                 break;

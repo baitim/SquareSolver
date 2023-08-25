@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include <ctype.h>
-
-#include "ANSI_colours.h"
+#include "ANSI_colors.h"
 #include "Check_errors.h"
 #include "Input_output.h"
 
-// the function reads the coefficients and sends them for verification
+#include <stdio.h>
+#include <ctype.h>
+
 bool input_coefficients_or_exit(coefficients *coefs)
 {
         ASSERT(coefs);
@@ -28,7 +27,7 @@ bool input_coefficients_or_exit(coefficients *coefs)
                 case USER_CORRECT:
                         printf(ANSI_LIGHT_GREEN "Correct input\n" ANSI_DEFAULT_COLOR);
                         return true;
-                        break;
+                        break; //?
                 case USER_EXIT:
                         return false;
                         break;
@@ -39,20 +38,18 @@ bool input_coefficients_or_exit(coefficients *coefs)
         }
 }
 
-// the function checks the correctness of the input
 user_choice check_input(int count_input)
 {
-        if (!is_input_empty() or count_input != 3 or count_input == EOF) {
+        if (!is_input_empty() || count_input != 3 || count_input == EOF) {
                 int x = -1;
-                while (true) {
+                int count_x = 0;
+                do {
                         printf (ANSI_LIGHT_RED "Incorrect input, input: "
                                                "0 - to exit, 1 - to continue\n" ANSI_DEFAULT_COLOR);
-                        int count_x = scanf("%d", &x);
-
-                        if (is_input_empty() && count_x == 1 && (x == 1 or x == 0)) {
-                            break;
-                        }
+                        count_x = scanf("%d", &x);
                 }
+                while (!is_input_empty() || !(count_x == 1) || !(x == 1 || x == 0));
+
                 if (x == 0)
                         return USER_EXIT;
                 return USER_CONTINUE;
@@ -65,8 +62,8 @@ bool is_input_empty()
 {
         bool is_empty = true;
         int c = 0;
-        while ((c = getchar()) != '\n') { // '\n'
-                if (!isspace(c))  // ' ', '\t'
+        while ((c = getchar()) != '\n') {
+                if (!isspace(c))
                         is_empty = false;
         }
         return is_empty;

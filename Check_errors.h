@@ -1,12 +1,12 @@
 #ifndef CHECK_ERRORS_H
 #define CHECK_ERRORS_H
 
+#include "ANSI_colors.h"
+#include "Input_output.h"
+
 #include <stdlib.h>
 
 #define TEST_ON
-
-#include "ANSI_colours.h"
-#include "Input_output.h"
 
 #ifndef NDEBUG
 #define ASSERT(x)                                                   \
@@ -20,8 +20,6 @@
 #else
 #define ASSERT(...)
 #endif
-
-const int nTests = 5;
 
 /*!
 @brief Function checks if test_on and testing.

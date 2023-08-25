@@ -9,7 +9,7 @@ var searchData=
   ['calculation_5fof_5froots_6',['calculation_of_roots',['../_calculation_8cpp.html#a24577d6630731033fcfe7d14b421c9e4',1,'calculation_of_roots(const coefficients *coefs, roots_struct *roots):&#160;Calculation.cpp'],['../_calculation_8h.html#a24577d6630731033fcfe7d14b421c9e4',1,'calculation_of_roots(const coefficients *coefs, roots_struct *roots):&#160;Calculation.cpp']]],
   ['check_5ferrors_2eh_7',['Check_errors.h',['../_check__errors_8h.html',1,'']]],
   ['check_5finput_8',['check_input',['../_input_8cpp.html#a630b3b277fee2ef2750b7d89142bc423',1,'check_input(int count_input):&#160;Input.cpp'],['../_input__output_8h.html#a630b3b277fee2ef2750b7d89142bc423',1,'check_input(int count_input):&#160;Input.cpp']]],
-  ['check_5ftest_9',['check_test',['../_check__errors_8h.html#a56365966591549a87031f8edadad7a6f',1,'check_test(coefficients *coefs_t, roots_struct *roots_t):&#160;Tests.cpp'],['../_tests_8cpp.html#a56365966591549a87031f8edadad7a6f',1,'check_test(coefficients *coefs_t, roots_struct *roots_t):&#160;Tests.cpp']]],
+  ['check_5ftest_9',['check_test',['../_check__errors_8h.html#a56365966591549a87031f8edadad7a6f',1,'check_test(coefficients *coefs_t, roots_struct *roots_t):&#160;Tests.cpp'],['../_tests_8cpp.html#a9ea92277499a2741925417b3a9e64e64',1,'check_test(coefficients *coefs, roots_struct *roots_t):&#160;Tests.cpp']]],
   ['cmd_5finput_5fdata_10',['cmd_input_data',['../structcmd__input__data.html',1,'']]],
   ['coefficients_11',['coefficients',['../structcoefficients.html',1,'']]],
   ['count_5froot_12',['count_root',['../structroots__struct.html#a753730f7bf1a3ad7d8ad47fc99b9e593',1,'roots_struct']]]

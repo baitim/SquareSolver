@@ -1,9 +1,9 @@
-#include <stdio.h>
-
-#include "Check_errors.h"
-#include "ANSI_colours.h"
+#include "ANSI_colors.h"
 #include "Calculation.h"
+#include "Check_errors.h"
 #include "Input_output.h"
+
+#include <stdio.h>
 
 int main (int argc, char *argv[])
 {
@@ -14,10 +14,10 @@ int main (int argc, char *argv[])
         cmd_input_data cmd_data = { false, 0.0f, 0.0f, 0.0f, false, nullptr };
         input_cmd(argc, argv, &cmd_data);
 
-        #ifdef TEST_ON
-                if (cmd_data.is_coeffs_input)
-                        test(&cmd_data);
-        #endif
+#ifdef TEST_ON
+        if (cmd_data.is_coeffs_input)
+                test(&cmd_data);
+#endif
 
         calculate_equation_from_cmd(&cmd_data);
 

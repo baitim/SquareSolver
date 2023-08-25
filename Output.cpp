@@ -1,11 +1,13 @@
-#include <stdio.h>
-
-#include "ANSI_colours.h"
+#include "ANSI_colors.h"
 #include "Check_errors.h"
 #include "Input_output.h"
 
+#include <stdio.h>
+
 void print_roots(const roots_struct *roots)
 {
+        ASSERT(roots);
+
         number_roots roots_ = roots->count_root;
         switch (roots_) {
         case ROOT_0:
