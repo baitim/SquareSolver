@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
+void input_cmd(int argc, const char *argv[], cmd_input_data *cmd_data)
 {
         ASSERT(argv);
         ASSERT(cmd_data);
@@ -13,7 +13,7 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
         for (int i = 0; i < argc; i++) {
                 for (int j = 0; j < count_options; j++) {
                         if (strcmp(argv[i], options[j].name) == 0) {
-                                (*options[j].callback)((const char **)&argv[i], cmd_data);
+                                (*options[j].callback)(&argv[i], cmd_data);
                                 i += options[j].n_args;
                         }
 
@@ -51,7 +51,7 @@ void test_on_callback(const char* argv[], cmd_input_data* data)
         data->name_test_file = argv[1];
 }
 
-void help_callback(const char* argv[], cmd_input_data* data)
+void help_callback(const char* /*argv*/[], cmd_input_data* data)
 {
         data->is_help = true;
 }

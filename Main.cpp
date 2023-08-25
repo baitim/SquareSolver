@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main (int argc, char *argv[])
+int main (int argc, const char *argv[])
 {
         printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
                                "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOR);
