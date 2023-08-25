@@ -4,6 +4,7 @@
 #include "Input_output.h"
 
 const double EPSILON = 1e-7;
+const int PRECISION = 6;
 
 /*!
 @brief Function calculate roots using data from cmd.

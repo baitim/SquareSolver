@@ -42,7 +42,7 @@ void test(cmd_input_data *cmd_data)
                 return;
 
         fclose(fp);
-        printf(ANSI_LIGHT_GREEN "ALL TESTS ACCEPTED\n\n" ANSI_DEFAULT_COLOR);   // ALL TESTS PASSED
+        printf(ANSI_LIGHT_GREEN "ALL TESTS PASSED\n\n" ANSI_DEFAULT_COLOR);
 }
 
 int check_test(coefficients *coefs, roots_struct *roots_ref)

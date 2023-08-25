@@ -11,8 +11,9 @@ bool input_coefficients_or_exit(coefficients *coefs)
 
         printf(ANSI_YELLOW "Enter e to exit or something else to continue\n" ANSI_DEFAULT_COLOR);
         char c = '$';
+        char exit_key = 'e';
         int count_c = scanf("%c", &c);
-        if (is_input_empty() && count_c == 1 && c == 'e')
+        if (is_input_empty() && count_c == 1 && c == exit_key)
                 return false;
 
         printf(ANSI_YELLOW "Enter the coefficients for the quadratic"
@@ -27,13 +28,10 @@ bool input_coefficients_or_exit(coefficients *coefs)
                 case USER_CORRECT:
                         printf(ANSI_LIGHT_GREEN "Correct input\n" ANSI_DEFAULT_COLOR);
                         return true;
-                        break; //?
                 case USER_EXIT:
                         return false;
-                        break;
                 default:
                         ASSERT(0);
-                        break;
                 }
         }
 }

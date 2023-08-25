@@ -34,9 +34,7 @@ void print_roots(const roots_struct *roots)
         case ROOT_ERR:
                 printf(ANSI_LIGHT_RED "ERROR\n" ANSI_DEFAULT_COLOR);
                 ASSERT(0);
-                break;
         default:
                 ASSERT(0);
-                break;
         }
 }
