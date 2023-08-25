@@ -1,6 +1,8 @@
 #ifndef INPUT_OUTPUT_H
 #define INPUT_OUTPUT_H
 
+const int PRECISION = 6;
+
 /// Root number cases.
 enum number_roots {
         ROOT_0, ///< 0 roots

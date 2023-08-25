@@ -15,16 +15,17 @@ void print_roots(const roots_struct *roots)
                 break;
         case ROOT_1_QUAD:
                 printf(ANSI_LIGHT_YELLOW "Total roots: 1\nx = " ANSI_LIGHT_CYAN
-                                         "%.6lg\n" ANSI_DEFAULT_COLOR, roots->root1);
+                                         "%.*lg\n" ANSI_DEFAULT_COLOR, PRECISION, roots->root1);
                 break;
         case ROOT_2_QUAD:
                 printf(ANSI_LIGHT_YELLOW "Total roots: 2\nx1 = " ANSI_LIGHT_CYAN
-                                         "%.6lg  " ANSI_LIGHT_YELLOW "x2 = " ANSI_LIGHT_CYAN
-                                         "%.6lg\n" ANSI_DEFAULT_COLOR, roots->root1, roots->root2);
+                                         "%.*lg  " ANSI_LIGHT_YELLOW "x2 = " ANSI_LIGHT_CYAN
+                                         "%.*lg\n" ANSI_DEFAULT_COLOR, PRECISION, roots->root1,
+                                         PRECISION, roots->root2);
                 break;
         case ROOT_1_LINE:
                 printf(ANSI_LIGHT_YELLOW "The equation is not square, the root = " ANSI_LIGHT_CYAN
-                                         "%.6lg\n" ANSI_DEFAULT_COLOR, roots->root1);
+                                         "%.*lg\n" ANSI_DEFAULT_COLOR, PRECISION, roots->root1);
                 break;
         case ROOT_INF:
                 printf(ANSI_LIGHT_YELLOW "The equation is not square, " ANSI_LIGHT_RED

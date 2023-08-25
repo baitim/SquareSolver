@@ -64,10 +64,10 @@ int check_test(coefficients *coefs, roots_struct *roots_ref)
         if (!(nRoots_ref == nRoots) ||
                 (!(is_double_equal(x1_ref, x2) && is_double_equal(x2_ref, x1)) &&
                !(is_double_equal(x1_ref, x1) && is_double_equal(x2_ref, x2))) ) {
-                printf(ANSI_LIGHT_RED "Failed: x1 = %lg, x2 = %lg, roots = %d; expected:"
-                                      "x1ref = %lg, x2ref = %lg, roots_ref = %d\n\n" ANSI_DEFAULT_COLOR,
-                                      roots.root1, roots.root2, roots.count_root, roots_ref->root1,
-                                      roots_ref->root2, roots_ref->count_root);
+                printf(ANSI_LIGHT_RED "Failed: x1 = %.*lg, x2 = %.*lg, roots = %d;  expected:"
+                                      "x1ref = %.*lg, x2ref = %.*lg, roots_ref = %d\n\n" ANSI_DEFAULT_COLOR,
+                                      PRECISION, roots.root1, PRECISION, roots.root2, roots.count_root,
+                                      PRECISION, roots_ref->root1, PRECISION, roots_ref->root2, roots_ref->count_root);
                 return 0;
         }
         return 1;
