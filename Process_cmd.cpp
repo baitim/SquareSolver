@@ -19,9 +19,9 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
 
         for (int i = 0; i < argc; i++) {
                 if (i < argc - 1) {
-                        check_flags_coeffs_cmd(argv[i], argv[i+1], (char *)"-a", &a, &has_a);
-                        check_flags_coeffs_cmd(argv[i], argv[i+1], (char *)"-b", &b, &has_b);
-                        check_flags_coeffs_cmd(argv[i], argv[i+1], (char *)"-c", &c, &has_c);
+                        check_flags_coeffs_cmd(argv[i], argv[i+1], "-a", &a, &has_a);
+                        check_flags_coeffs_cmd(argv[i], argv[i+1], "-b", &b, &has_b);
+                        check_flags_coeffs_cmd(argv[i], argv[i+1], "-c", &c, &has_c);
                 }
 
                 if (strcmp(argv[i], "-test_on") == 0) {
@@ -39,7 +39,7 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
         }
 }
 
-void check_flags_coeffs_cmd(char argv1[], char argv2[], char *flag_coef, double *x, bool *has_x)
+void check_flags_coeffs_cmd(char argv1[], char argv2[], const char *flag_coef, double *x, bool *has_x)
 {
         if (strcmp(argv1, flag_coef) == 0) {
                 char *stopstring;
