@@ -1,0 +1,79 @@
+\doxysection{D\+:/\+Solves/\+Square\+Solver/\+Check\+\_\+errors.h File Reference}
+\hypertarget{_check__errors_8h}{}\label{_check__errors_8h}\index{D:/Solves/SquareSolver/Check\_errors.h@{D:/Solves/SquareSolver/Check\_errors.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \"{}ANSI\+\_\+colours.\+h\"{}}\newline
+{\ttfamily \#include \"{}Input\+\_\+output.\+h\"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_check__errors_8h_afcf1a6e3b093e419da9f3f1d52fe170e}{TEST\+\_\+\+ON}}
+\item 
+\#define \mbox{\hyperlink{_check__errors_8h_aca68c0d4ac8df0838e209fb5300f7be3}{ASSERT}}(x)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_check__errors_8h_a908d50f5319181a01c30d4b907281266}{test}} (\mbox{\hyperlink{structcmd__input__data}{cmd\+\_\+input\+\_\+data}} \texorpdfstring{$\ast$}{*}cmd\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Function checks if test\+\_\+on and testing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_check__errors_8h_a56365966591549a87031f8edadad7a6f}{check\+\_\+test}} (\mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}coefs\+\_\+t, \mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}roots\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Function compares reference roots and number of them with calculated roots and number of them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_check__errors_8h_aca68c0d4ac8df0838e209fb5300f7be3}\label{_check__errors_8h_aca68c0d4ac8df0838e209fb5300f7be3} 
+\index{Check\_errors.h@{Check\_errors.h}!ASSERT@{ASSERT}}
+\index{ASSERT@{ASSERT}!Check\_errors.h@{Check\_errors.h}}
+\doxysubsubsection{\texorpdfstring{ASSERT}{ASSERT}}
+{\footnotesize\ttfamily \#define ASSERT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(x))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\mbox{\hyperlink{_a_n_s_i__colours_8h_a62b86d29721aeb3e4a37f501ec602eea}{ANSI\_LIGHT\_RED}}\ \textcolor{stringliteral}{"{}Text\ in\ assert:\ (\%s)\(\backslash\)n"{}},\ \#x);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}File:\ \%s\(\backslash\)n"{}},\ \_\_FILE\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Function:\ \%s\(\backslash\)n"{}},\ \_\_PRETTY\_FUNCTION\_\_);\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Line:\ \%d\(\backslash\)n"{}}\ \mbox{\hyperlink{_a_n_s_i__colours_8h_aa0ade98cdef069c48caf833c7e57ca44}{ANSI\_DEFAULT\_COLOR}},\ \_\_LINE\_\_);\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit(0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{_check__errors_8h_afcf1a6e3b093e419da9f3f1d52fe170e}\label{_check__errors_8h_afcf1a6e3b093e419da9f3f1d52fe170e} 
+\index{Check\_errors.h@{Check\_errors.h}!TEST\_ON@{TEST\_ON}}
+\index{TEST\_ON@{TEST\_ON}!Check\_errors.h@{Check\_errors.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_ON}{TEST\_ON}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+ON}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_check__errors_8h_a56365966591549a87031f8edadad7a6f}\label{_check__errors_8h_a56365966591549a87031f8edadad7a6f} 
+\index{Check\_errors.h@{Check\_errors.h}!check\_test@{check\_test}}
+\index{check\_test@{check\_test}!Check\_errors.h@{Check\_errors.h}}
+\doxysubsubsection{\texorpdfstring{check\_test()}{check\_test()}}
+{\footnotesize\ttfamily int check\+\_\+test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}}]{coefs\+\_\+t,  }\item[{\mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}}]{roots\+\_\+t }\end{DoxyParamCaption})}
+
+
+
+Function compares reference roots and number of them with calculated roots and number of them. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em test\+\_\+data} & struct for compare, include reference roots, number of roots and coefficients\\
+\hline
+\end{DoxyParams}
+Function return 1 if test is OK or 0 if test failed. \Hypertarget{_check__errors_8h_a908d50f5319181a01c30d4b907281266}\label{_check__errors_8h_a908d50f5319181a01c30d4b907281266} 
+\index{Check\_errors.h@{Check\_errors.h}!test@{test}}
+\index{test@{test}!Check\_errors.h@{Check\_errors.h}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily void test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__input__data}{cmd\+\_\+input\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{cmd\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Function checks if test\+\_\+on and testing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd\+\_\+data} & struct of data from cmd\\
+\hline
+\end{DoxyParams}
+Function checks if file of test correct and run check\+\_\+test. 
