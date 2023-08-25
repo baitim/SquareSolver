@@ -32,8 +32,12 @@ void test(cmd_input_data *cmd_data)
                 ASSERT((count_root_ >= 0) && (count_root_ <= 4));
                 roots.count_root = (number_roots)count_root_;
 
-                if (count_input != 6)
+                if (count_input == -1)
                         break;
+
+                if (count_input != count_numbers_in_test_data)
+                        printf (ANSI_LIGHT_RED "Test data read error\n\n" ANSI_DEFAULT_COLOR);
+
                 if(!check_test(&coefs, &roots))
                         is_OK = 0;
         }

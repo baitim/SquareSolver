@@ -72,6 +72,8 @@ void print_roots(const roots_struct *roots);
 */
 void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data);
 
+void check_flags_coeffs_cmd(char argv1[], char argv2[], char *flag_coef, double *x, bool *has_x);
+
 /*!
 @brief Function reads coefficients.
 @param[in] data struct, include coefs and roots

@@ -15,7 +15,7 @@ int main (int argc, char *argv[])
         input_cmd(argc, argv, &cmd_data);
 
 #ifdef TEST_ON
-        if (cmd_data.is_coeffs_input)
+        if (cmd_data.is_test_on)
                 test(&cmd_data);
 #endif
 

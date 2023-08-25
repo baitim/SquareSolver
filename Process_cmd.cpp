@@ -18,29 +18,16 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
         double c = 0;
 
         for (int i = 0; i < argc; i++) {
-                if ((strcmp(argv[i], "-a") == 0) && (i < argc - 1)) {
-                        char *stopstring = nullptr;        // КОПИПААААААААААААСТТТТТТТТ
-                        a = strtod(argv[i+1], &stopstring);
-                        if (*stopstring != '\0') {
-                                break;
-                        }
-                        has_a = true;
+                if (i < argc - 1) {
+                        check_flags_coeffs_cmd(argv[i], argv[i+1], (char *)"-a", &a, &has_a);
+                        check_flags_coeffs_cmd(argv[i], argv[i+1], (char *)"-b", &b, &has_b);
+                        check_flags_coeffs_cmd(argv[i], argv[i+1], (char *)"-c", &c, &has_c);
                 }
-                if ((strcmp(argv[i], "-b") == 0) && (i < argc - 1)) {
-                        char *stopstring;
-                        b = strtod(argv[i+1], &stopstring);
-                        if (*stopstring != '\0') {
-                                break;
-                        }
-                        has_b = true;
-                }
-                if ((strcmp(argv[i], "-c") == 0) && (i < argc - 1)) {
-                        char *stopstring;
-                        c = strtod(argv[i+1], &stopstring);
-                        if (*stopstring != '\0') {
-                                break;
-                        }
-                        has_c = true;
+
+                if (strcmp(argv[i], "-test_on") == 0) {
+                        cmd_data->is_test_on = true;
+                        if (i < argc - 1)
+                                cmd_data->name_test_file = argv[i+1];
                 }
         }
 
@@ -50,13 +37,14 @@ void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
                 cmd_data->b = b;
                 cmd_data->c = c;
         }
+}
 
-        //-----------------------------------------------------
-        for (int i = 0; i < argc; i++) {
-                if (strcmp(argv[i], "-test_on") == 0) {
-                        cmd_data->is_test_on = true;
-                        if (i < argc - 1)
-                                cmd_data->name_test_file = argv[i+1];
-                }
+void check_flags_coeffs_cmd(char argv1[], char argv2[], char *flag_coef, double *x, bool *has_x)
+{
+        if (strcmp(argv1, flag_coef) == 0) {
+                char *stopstring;
+                *x = strtod(argv2, &stopstring);
+                if (*stopstring == '\0')
+                        *has_x = true;
         }
 }
