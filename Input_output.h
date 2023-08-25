@@ -34,11 +34,41 @@ struct roots_struct {
 };
 
 struct cmd_input_data {
-        bool is_coeffs_input;
+        bool is_a, is_b, is_c;
         double a, b, c;
         bool is_test_on;
-        char *name_test_file;
+        const char *name_test_file;
+        bool is_help;
 };
+
+const int count_options = 5;
+
+struct cmd_line_option {
+        const char *name;
+        const char *description;
+        int n_args;
+        void (*callback)(const char* argv[], cmd_input_data* data);
+};
+
+void coef_a_callback(const char* argv[], cmd_input_data* data);
+
+void coef_b_callback(const char* argv[], cmd_input_data* data);
+
+void coef_c_callback(const char* argv[], cmd_input_data* data);
+
+void test_on_callback(const char* argv[], cmd_input_data* data);
+
+void help_callback(const char* argv[], cmd_input_data* data);
+
+const cmd_line_option options[] = {
+        {"-a", "first coef", 1, coef_a_callback},
+        {"-b", "second coef", 1, coef_b_callback},
+        {"-c", "third coef", 1, coef_c_callback},
+        {"-test_on", "include tests", 1, test_on_callback},
+        {"--help", "help", 0, help_callback}
+};
+
+void print_help();
 
 /// User choice, user can continue, get answer or exit.
 enum user_choice {

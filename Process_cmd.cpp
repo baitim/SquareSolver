@@ -7,44 +7,51 @@
 
 void input_cmd(int argc, char *argv[], cmd_input_data *cmd_data)
 {
-        ASSERT(argv && cmd_data);
-
-        bool has_a = false;
-        bool has_b = false;
-        bool has_c = false;
-
-        double a = 0;
-        double b = 0;
-        double c = 0;
+        ASSERT(argv);
+        ASSERT(cmd_data);
 
         for (int i = 0; i < argc; i++) {
-                if (i < argc - 1) {
-                        check_flags_coeffs_cmd(argv[i], argv[i+1], "-a", &a, &has_a);
-                        check_flags_coeffs_cmd(argv[i], argv[i+1], "-b", &b, &has_b);
-                        check_flags_coeffs_cmd(argv[i], argv[i+1], "-c", &c, &has_c);
-                }
+                for (int j = 0; j < count_options; j++) {
+                        if (strcmp(argv[i], options[j].name) == 0) {
+                                (*options[j].callback)((const char **)&argv[i], cmd_data);
+                                i += options[j].n_args;
+                        }
 
-                if (strcmp(argv[i], "-test_on") == 0) {
-                        cmd_data->is_test_on = true;
-                        if (i < argc - 1)
-                                cmd_data->name_test_file = argv[i+1];
                 }
-        }
-
-        if (has_a && has_b && has_c) {
-                cmd_data->is_coeffs_input = true;
-                cmd_data->a = a;
-                cmd_data->b = b;
-                cmd_data->c = c;
         }
 }
 
-void check_flags_coeffs_cmd(char argv1[], char argv2[], const char *flag_coef, double *x, bool *has_x)
+void coef_a_callback(const char* argv[], cmd_input_data* data)
 {
-        if (strcmp(argv1, flag_coef) == 0) {
-                char *stopstring;
-                *x = strtod(argv2, &stopstring);
-                if (*stopstring == '\0')
-                        *has_x = true;
-        }
+        char *stopstring;
+        data->a = strtod(argv[1], &stopstring);
+        if (*stopstring == '\0')
+                data->is_a = true;
+}
+
+void coef_b_callback(const char* argv[], cmd_input_data* data)
+{
+        char *stopstring;
+        data->b = strtod(argv[1], &stopstring);
+        if (*stopstring == '\0')
+                data->is_b = true;
+}
+
+void coef_c_callback(const char* argv[], cmd_input_data* data)
+{
+        char *stopstring;
+        data->c = strtod(argv[1], &stopstring);
+        if (*stopstring == '\0')
+                data->is_c = true;
+}
+
+void test_on_callback(const char* argv[], cmd_input_data* data)
+{
+        data->is_test_on = true;
+        data->name_test_file = argv[1];
+}
+
+void help_callback(const char* argv[], cmd_input_data* data)
+{
+        data->is_help = true;
 }

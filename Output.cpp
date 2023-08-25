@@ -4,6 +4,13 @@
 
 #include <stdio.h>
 
+void print_help()
+{
+        for (int i = 0; i < count_options; i++) {
+                printf(ANSI_LIGHT_GREEN "%s\t\t%s\n" ANSI_DEFAULT_COLOR, options[i].name, options[i].description);
+        }
+}
+
 void print_roots(const roots_struct *roots)
 {
         ASSERT(roots);

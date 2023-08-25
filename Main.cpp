@@ -8,18 +8,22 @@
 int main (int argc, char *argv[])
 {
         printf(ANSI_LIGHT_BLUE "# Square equation solver\n"
-               "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOR);
+                               "# (c) BAIDIUSENOV TIMUR, 2023\n\n" ANSI_DEFAULT_COLOR);
 
 
-        cmd_input_data cmd_data = { false, 0.0f, 0.0f, 0.0f, false, nullptr };
+        cmd_input_data cmd_data = { false, false, false, 0.0f, 0.0f, 0.0f, false, nullptr, false };
         input_cmd(argc, argv, &cmd_data);
+
+        if (cmd_data.is_help)
+                print_help();
 
 #ifdef TEST_ON
         if (cmd_data.is_test_on)
                 test(&cmd_data);
 #endif
 
-        calculate_equation_from_cmd(&cmd_data);
+        if (cmd_data.is_a && cmd_data.is_b && cmd_data.is_c)
+                calculate_equation_from_cmd(&cmd_data);
 
         coefficients coefs = { 0.0f, 0.0f, 0.0f };
         roots_struct roots = { 0.0f, 0.0f, ROOT_ERR };
