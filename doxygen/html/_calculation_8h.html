@@ -88,12 +88,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a7bd63fced8bd1530a73cbf34341599bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_calculation_8h.html#a7bd63fced8bd1530a73cbf34341599bc">calculate_equation_from_cmd</a> (<a class="el" href="structcmd__input__data.html">cmd_input_data</a> *cmd_data)</td></tr>
 <tr class="memdesc:a7bd63fced8bd1530a73cbf34341599bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function calculate roots using data from cmd.  <br /></td></tr>
 <tr class="separator:a7bd63fced8bd1530a73cbf34341599bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d611c93e9d97200e34e72981f72bc38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_calculation_8h.html#a7d611c93e9d97200e34e72981f72bc38">calculation_of_roots</a> (<a class="el" href="structcoefs__roots.html">coefs_roots</a> *data)</td></tr>
-<tr class="memdesc:a7d611c93e9d97200e34e72981f72bc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function calculate roots if equation is quadratic.  <br /></td></tr>
-<tr class="separator:a7d611c93e9d97200e34e72981f72bc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a389ea9d44e73d7d4d085e215e2c5b2f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_calculation_8h.html#a389ea9d44e73d7d4d085e215e2c5b2f3">calculation_linear</a> (<a class="el" href="structcoefs__roots.html">coefs_roots</a> *data)</td></tr>
-<tr class="memdesc:a389ea9d44e73d7d4d085e215e2c5b2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function calculate roots if equation is linear.  <br /></td></tr>
-<tr class="separator:a389ea9d44e73d7d4d085e215e2c5b2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24577d6630731033fcfe7d14b421c9e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_calculation_8h.html#a24577d6630731033fcfe7d14b421c9e4">calculation_of_roots</a> (const <a class="el" href="structcoefficients.html">coefficients</a> *coefs, <a class="el" href="structroots__struct.html">roots_struct</a> *roots)</td></tr>
+<tr class="memdesc:a24577d6630731033fcfe7d14b421c9e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function calculate roots if equation is quadratic.  <br /></td></tr>
+<tr class="separator:a24577d6630731033fcfe7d14b421c9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8dde75522afb30cf8115fe481658ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_calculation_8h.html#a6e8dde75522afb30cf8115fe481658ef">calculation_linear</a> (const <a class="el" href="structcoefficients.html">coefficients</a> *coefs, <a class="el" href="structroots__struct.html">roots_struct</a> *roots)</td></tr>
+<tr class="memdesc:a6e8dde75522afb30cf8115fe481658ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function calculate roots if equation is linear.  <br /></td></tr>
+<tr class="separator:a6e8dde75522afb30cf8115fe481658ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa8d73f550018486e8f33273aac59e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_calculation_8h.html#a4aa8d73f550018486e8f33273aac59e1">is_double_equal</a> (double x, double y)</td></tr>
 <tr class="memdesc:a4aa8d73f550018486e8f33273aac59e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function compare doubles.  <br /></td></tr>
 <tr class="separator:a4aa8d73f550018486e8f33273aac59e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +137,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a389ea9d44e73d7d4d085e215e2c5b2f3" name="a389ea9d44e73d7d4d085e215e2c5b2f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a389ea9d44e73d7d4d085e215e2c5b2f3">&#9670;&#160;</a></span>calculation_linear()</h2>
+<a id="a6e8dde75522afb30cf8115fe481658ef" name="a6e8dde75522afb30cf8115fe481658ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8dde75522afb30cf8115fe481658ef">&#9670;&#160;</a></span>calculation_linear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,9 +146,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void calculation_linear </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structcoefs__roots.html">coefs_roots</a> *&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structcoefficients.html">coefficients</a> *&#160;</td>
+          <td class="paramname"><em>coefs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structroots__struct.html">roots_struct</a> *&#160;</td>
+          <td class="paramname"><em>roots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -165,8 +175,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7d611c93e9d97200e34e72981f72bc38" name="a7d611c93e9d97200e34e72981f72bc38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d611c93e9d97200e34e72981f72bc38">&#9670;&#160;</a></span>calculation_of_roots()</h2>
+<a id="a24577d6630731033fcfe7d14b421c9e4" name="a24577d6630731033fcfe7d14b421c9e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24577d6630731033fcfe7d14b421c9e4">&#9670;&#160;</a></span>calculation_of_roots()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,9 +184,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void calculation_of_roots </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structcoefs__roots.html">coefs_roots</a> *&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structcoefficients.html">coefficients</a> *&#160;</td>
+          <td class="paramname"><em>coefs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structroots__struct.html">roots_struct</a> *&#160;</td>
+          <td class="paramname"><em>roots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

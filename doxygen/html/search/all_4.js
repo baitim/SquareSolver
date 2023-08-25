@@ -2,7 +2,7 @@ var searchData=
 [
   ['input_2ecpp_0',['Input.cpp',['../_input_8cpp.html',1,'']]],
   ['input_5fcmd_1',['input_cmd',['../_input__output_8h.html#a195b72db01704cdc4db939cbd4e0d819',1,'input_cmd(int argc, char *argv[], cmd_input_data *cmd_data):&#160;Process_cmd.cpp'],['../_process__cmd_8cpp.html#a195b72db01704cdc4db939cbd4e0d819',1,'input_cmd(int argc, char *argv[], cmd_input_data *cmd_data):&#160;Process_cmd.cpp']]],
-  ['input_5fcoefficients_5for_5fexit_2',['input_coefficients_or_exit',['../_input_8cpp.html#a0be2585139a84f8b6cea5597a8f2e41d',1,'input_coefficients_or_exit(coefs_roots *data):&#160;Input.cpp'],['../_input__output_8h.html#a0be2585139a84f8b6cea5597a8f2e41d',1,'input_coefficients_or_exit(coefs_roots *data):&#160;Input.cpp']]],
+  ['input_5fcoefficients_5for_5fexit_2',['input_coefficients_or_exit',['../_input_8cpp.html#ac549f635b679c4c8684394e9b50f7c88',1,'input_coefficients_or_exit(coefficients *coefs):&#160;Input.cpp'],['../_input__output_8h.html#ac549f635b679c4c8684394e9b50f7c88',1,'input_coefficients_or_exit(coefficients *coefs):&#160;Input.cpp']]],
   ['input_5foutput_2eh_3',['Input_output.h',['../_input__output_8h.html',1,'']]],
   ['is_5fcoeffs_5finput_4',['is_coeffs_input',['../structcmd__input__data.html#aead0e49b61fc040cb549c3a89e25ef3d',1,'cmd_input_data']]],
   ['is_5fdouble_5fequal_5',['is_double_equal',['../_calculation_8cpp.html#a4aa8d73f550018486e8f33273aac59e1',1,'is_double_equal(double x, double y):&#160;Calculation.cpp'],['../_calculation_8h.html#a4aa8d73f550018486e8f33273aac59e1',1,'is_double_equal(double x, double y):&#160;Calculation.cpp']]],

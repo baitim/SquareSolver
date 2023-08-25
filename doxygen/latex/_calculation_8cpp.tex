@@ -1,6 +1,5 @@
 \doxysection{D\+:/\+Solves/\+Square\+Solver/\+Calculation.cpp File Reference}
 \hypertarget{_calculation_8cpp}{}\label{_calculation_8cpp}\index{D:/Solves/SquareSolver/Calculation.cpp@{D:/Solves/SquareSolver/Calculation.cpp}}
-{\ttfamily \#include $<$TXLib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include \"{}Check\+\_\+errors.\+h\"{}}\newline
@@ -9,9 +8,9 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38}{calculation\+\_\+of\+\_\+roots}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}data)
+void \mbox{\hyperlink{_calculation_8cpp_a24577d6630731033fcfe7d14b421c9e4}{calculation\+\_\+of\+\_\+roots}} (const \mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}coefs, \mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}roots)
 \begin{DoxyCompactList}\small\item\em Function calculate roots if equation is quadratic. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{_calculation_8cpp_a389ea9d44e73d7d4d085e215e2c5b2f3}{calculation\+\_\+linear}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}data)
+void \mbox{\hyperlink{_calculation_8cpp_a6e8dde75522afb30cf8115fe481658ef}{calculation\+\_\+linear}} (const \mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}coefs, \mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}roots)
 \begin{DoxyCompactList}\small\item\em Function calculate roots if equation is linear. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_calculation_8cpp_a4aa8d73f550018486e8f33273aac59e1}{is\+\_\+double\+\_\+equal}} (double x, double y)
 \begin{DoxyCompactList}\small\item\em Function compare doubles. \end{DoxyCompactList}\item 
@@ -22,11 +21,11 @@ bool \mbox{\hyperlink{_calculation_8cpp_adf4c0baf90bdac9fbbab8f69bc5d79d5}{is\+\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{_calculation_8cpp_a389ea9d44e73d7d4d085e215e2c5b2f3}\label{_calculation_8cpp_a389ea9d44e73d7d4d085e215e2c5b2f3} 
+\Hypertarget{_calculation_8cpp_a6e8dde75522afb30cf8115fe481658ef}\label{_calculation_8cpp_a6e8dde75522afb30cf8115fe481658ef} 
 \index{Calculation.cpp@{Calculation.cpp}!calculation\_linear@{calculation\_linear}}
 \index{calculation\_linear@{calculation\_linear}!Calculation.cpp@{Calculation.cpp}}
 \doxysubsubsection{\texorpdfstring{calculation\_linear()}{calculation\_linear()}}
-{\footnotesize\ttfamily void calculation\+\_\+linear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void calculation\+\_\+linear (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}}]{coefs,  }\item[{\mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -39,11 +38,11 @@ Function calculate roots if equation is linear.
 \mbox{\texttt{ out}}  & {\em data} & struct, include coefs and roots\\
 \hline
 \end{DoxyParams}
-Function change root1, root2 and number\+\_\+of\+\_\+roots. \Hypertarget{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38}\label{_calculation_8cpp_a7d611c93e9d97200e34e72981f72bc38} 
+Function change root1, root2 and number\+\_\+of\+\_\+roots. \Hypertarget{_calculation_8cpp_a24577d6630731033fcfe7d14b421c9e4}\label{_calculation_8cpp_a24577d6630731033fcfe7d14b421c9e4} 
 \index{Calculation.cpp@{Calculation.cpp}!calculation\_of\_roots@{calculation\_of\_roots}}
 \index{calculation\_of\_roots@{calculation\_of\_roots}!Calculation.cpp@{Calculation.cpp}}
 \doxysubsubsection{\texorpdfstring{calculation\_of\_roots()}{calculation\_of\_roots()}}
-{\footnotesize\ttfamily void calculation\+\_\+of\+\_\+roots (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void calculation\+\_\+of\+\_\+roots (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}}]{coefs,  }\item[{\mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}}]{roots }\end{DoxyParamCaption})}
 
 
 

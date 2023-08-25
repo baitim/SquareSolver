@@ -3,8 +3,10 @@
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}}
-\begin{DoxyCompactList}\small\item\em Structure has coefficients, roots and number of roots. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcoefficients}{coefficients}}
+\item 
+struct \mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Structure has coefficients. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcmd__input__data}{cmd\+\_\+input\+\_\+data}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
@@ -28,11 +30,11 @@ enum \mbox{\hyperlink{_input__output_8h_aebf2b29c2cda0a4a828121694de63eb7}{user\
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_input__output_8h_a89a975d394e8b18ce4819ccf819d3f43}{print\+\_\+roots}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}data)
+void \mbox{\hyperlink{_input__output_8h_a8a114f846b06bfad53a3723dd37f07da}{print\+\_\+roots}} (const \mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}roots)
 \begin{DoxyCompactList}\small\item\em Function prints the number of roots and the roots. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_input__output_8h_a195b72db01704cdc4db939cbd4e0d819}{input\+\_\+cmd}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structcmd__input__data}{cmd\+\_\+input\+\_\+data}} \texorpdfstring{$\ast$}{*}cmd\+\_\+data)
 \begin{DoxyCompactList}\small\item\em Function reads all data from cmd. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{_input__output_8h_a0be2585139a84f8b6cea5597a8f2e41d}{input\+\_\+coefficients\+\_\+or\+\_\+exit}} (\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}data)
+bool \mbox{\hyperlink{_input__output_8h_ac549f635b679c4c8684394e9b50f7c88}{input\+\_\+coefficients\+\_\+or\+\_\+exit}} (\mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}coefs)
 \begin{DoxyCompactList}\small\item\em Function reads coefficients. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_input__output_8h_aebf2b29c2cda0a4a828121694de63eb7}{user\+\_\+choice}} \mbox{\hyperlink{_input__output_8h_a630b3b277fee2ef2750b7d89142bc423}{check\+\_\+input}} (int count\+\_\+input)
 \begin{DoxyCompactList}\small\item\em Function checks for correct input. \end{DoxyCompactList}\item 
@@ -143,11 +145,11 @@ Function can read 4 flags\+:~\newline
  -\/a~\newline
  -\/b~\newline
  -\/c~\newline
-\Hypertarget{_input__output_8h_a0be2585139a84f8b6cea5597a8f2e41d}\label{_input__output_8h_a0be2585139a84f8b6cea5597a8f2e41d} 
+\Hypertarget{_input__output_8h_ac549f635b679c4c8684394e9b50f7c88}\label{_input__output_8h_ac549f635b679c4c8684394e9b50f7c88} 
 \index{Input\_output.h@{Input\_output.h}!input\_coefficients\_or\_exit@{input\_coefficients\_or\_exit}}
 \index{input\_coefficients\_or\_exit@{input\_coefficients\_or\_exit}!Input\_output.h@{Input\_output.h}}
 \doxysubsubsection{\texorpdfstring{input\_coefficients\_or\_exit()}{input\_coefficients\_or\_exit()}}
-{\footnotesize\ttfamily bool input\+\_\+coefficients\+\_\+or\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool input\+\_\+coefficients\+\_\+or\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefficients}{coefficients}} \texorpdfstring{$\ast$}{*}}]{coefs }\end{DoxyParamCaption})}
 
 
 
@@ -168,11 +170,11 @@ Function continue reads input if user inputs mistake and offers exit. \Hypertarg
 
 Function checks for empty input. 
 
-Function return true if input empty. \Hypertarget{_input__output_8h_a89a975d394e8b18ce4819ccf819d3f43}\label{_input__output_8h_a89a975d394e8b18ce4819ccf819d3f43} 
+Function return true if input empty. \Hypertarget{_input__output_8h_a8a114f846b06bfad53a3723dd37f07da}\label{_input__output_8h_a8a114f846b06bfad53a3723dd37f07da} 
 \index{Input\_output.h@{Input\_output.h}!print\_roots@{print\_roots}}
 \index{print\_roots@{print\_roots}!Input\_output.h@{Input\_output.h}}
 \doxysubsubsection{\texorpdfstring{print\_roots()}{print\_roots()}}
-{\footnotesize\ttfamily void print\+\_\+roots (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoefs__roots}{coefs\+\_\+roots}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+roots (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structroots__struct}{roots\+\_\+struct}} \texorpdfstring{$\ast$}{*}}]{roots }\end{DoxyParamCaption})}
 
 
 

@@ -11,13 +11,20 @@ enum number_roots {
         ROOT_ERR ///< error, will assert(0)
 };
 
-/// Structure has coefficients, roots and number of roots.
+/*!
+@struct roots_struct
+@brief Structure has coefficients.
+*/
 struct coefficients {
         double a; ///< coefficient a
         double b; ///< coefficient b
         double c; ///< coefficient c
 };
 
+/*!
+@struct roots_struct
+@brief Structure has roots and number of them.
+*/
 struct roots_struct {
         double root1; ///< first root
         double root2; ///< second root

@@ -79,38 +79,41 @@ $(function() {
 <a href="_check__errors_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CHECK_ERRORS_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CHECK_ERRORS_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="_check__errors_8h.html#afcf1a6e3b093e419da9f3f1d52fe170e">    4</a></span><span class="preprocessor">#define TEST_ON</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_a_n_s_i__colours_8h.html">ANSI_colours.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_input__output_8h.html">Input_output.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_check__errors_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">   10</a></span><span class="preprocessor">#define ASSERT(x)                                                   \</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">        if (!(x)) {                                                 \</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">                printf(ANSI_LIGHT_RED &quot;Text in assert: (%s)\n&quot;</span>, #x);\</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                printf(&quot;File: %s\n&quot;, __FILE__);                     \</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                printf(&quot;Function: %s\n&quot;, __PRETTY_FUNCTION__);      \</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                printf(&quot;Line: %d\n&quot; ANSI_DEFAULT_COLOR, __LINE__);  \</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                exit(0);                                            \</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define ASSERT(...)</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_check__errors_8h.html#a005d644ae30c05304bc5144d913f28b6">   22</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_check__errors_8h.html#a005d644ae30c05304bc5144d913f28b6">nTests</a> = 5;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="_check__errors_8h.html#afcf1a6e3b093e419da9f3f1d52fe170e">    6</a></span><span class="preprocessor">#define TEST_ON</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_a_n_s_i__colours_8h.html">ANSI_colours.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_input__output_8h.html">Input_output.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef NDEBUG</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_check__errors_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">   12</a></span><span class="preprocessor">#define ASSERT(x)                                                   \</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">        if (!(x)) {                                                 \</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">                printf(ANSI_LIGHT_RED &quot;Text in assert: (%s)\n&quot;</span>, #x);\</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                printf(&quot;File: %s\n&quot;, __FILE__);                     \</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                printf(&quot;Function: %s\n&quot;, __PRETTY_FUNCTION__);      \</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                printf(&quot;Line: %d\n&quot; ANSI_DEFAULT_COLOR, __LINE__);  \</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                exit(0);                                            \</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define ASSERT(...)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="_check__errors_8h.html#a908d50f5319181a01c30d4b907281266">test</a>(<a class="code hl_struct" href="structcmd__input__data.html">cmd_input_data</a> *cmd_data);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">int</span> <a class="code hl_function" href="_check__errors_8h.html#a9a97a839220eecc01d90cce8bf2c81b5">check_test</a>(<a class="code hl_struct" href="structcoefs__roots.html">coefs_roots</a> *test_data);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">// CHECK_ERRORS_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_check__errors_8h.html#a005d644ae30c05304bc5144d913f28b6">   24</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_check__errors_8h.html#a005d644ae30c05304bc5144d913f28b6">nTests</a> = 5;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="_check__errors_8h.html#a908d50f5319181a01c30d4b907281266">test</a>(<a class="code hl_struct" href="structcmd__input__data.html">cmd_input_data</a> *cmd_data);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">int</span> <a class="code hl_function" href="_check__errors_8h.html#a56365966591549a87031f8edadad7a6f">check_test</a>(<a class="code hl_struct" href="structcoefficients.html">coefficients</a> *coefs_t, <a class="code hl_struct" href="structroots__struct.html">roots_struct</a> *roots_t);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">// CHECK_ERRORS_H</span></div>
 <div class="ttc" id="a_a_n_s_i__colours_8h_html"><div class="ttname"><a href="_a_n_s_i__colours_8h.html">ANSI_colours.h</a></div></div>
-<div class="ttc" id="a_check__errors_8h_html_a005d644ae30c05304bc5144d913f28b6"><div class="ttname"><a href="_check__errors_8h.html#a005d644ae30c05304bc5144d913f28b6">nTests</a></div><div class="ttdeci">const int nTests</div><div class="ttdef"><b>Definition</b> Check_errors.h:22</div></div>
+<div class="ttc" id="a_check__errors_8h_html_a005d644ae30c05304bc5144d913f28b6"><div class="ttname"><a href="_check__errors_8h.html#a005d644ae30c05304bc5144d913f28b6">nTests</a></div><div class="ttdeci">const int nTests</div><div class="ttdef"><b>Definition</b> Check_errors.h:24</div></div>
+<div class="ttc" id="a_check__errors_8h_html_a56365966591549a87031f8edadad7a6f"><div class="ttname"><a href="_check__errors_8h.html#a56365966591549a87031f8edadad7a6f">check_test</a></div><div class="ttdeci">int check_test(coefficients *coefs_t, roots_struct *roots_t)</div><div class="ttdoc">Function compares reference roots and number of them with calculated roots and number of them.</div><div class="ttdef"><b>Definition</b> Tests.cpp:45</div></div>
 <div class="ttc" id="a_check__errors_8h_html_a908d50f5319181a01c30d4b907281266"><div class="ttname"><a href="_check__errors_8h.html#a908d50f5319181a01c30d4b907281266">test</a></div><div class="ttdeci">void test(cmd_input_data *cmd_data)</div><div class="ttdoc">Function checks if test_on and testing.</div><div class="ttdef"><b>Definition</b> Tests.cpp:11</div></div>
-<div class="ttc" id="a_check__errors_8h_html_a9a97a839220eecc01d90cce8bf2c81b5"><div class="ttname"><a href="_check__errors_8h.html#a9a97a839220eecc01d90cce8bf2c81b5">check_test</a></div><div class="ttdeci">int check_test(coefs_roots *test_data)</div><div class="ttdoc">Function compares reference roots and number of them with calculated roots and number of them.</div><div class="ttdef"><b>Definition</b> Tests.cpp:44</div></div>
 <div class="ttc" id="a_input__output_8h_html"><div class="ttname"><a href="_input__output_8h.html">Input_output.h</a></div></div>
-<div class="ttc" id="astructcmd__input__data_html"><div class="ttname"><a href="structcmd__input__data.html">cmd_input_data</a></div><div class="ttdef"><b>Definition</b> Input_output.h:24</div></div>
-<div class="ttc" id="astructcoefs__roots_html"><div class="ttname"><a href="structcoefs__roots.html">coefs_roots</a></div><div class="ttdoc">Structure has coefficients, roots and number of roots.</div><div class="ttdef"><b>Definition</b> Input_output.h:15</div></div>
+<div class="ttc" id="astructcmd__input__data_html"><div class="ttname"><a href="structcmd__input__data.html">cmd_input_data</a></div><div class="ttdef"><b>Definition</b> Input_output.h:33</div></div>
+<div class="ttc" id="astructcoefficients_html"><div class="ttname"><a href="structcoefficients.html">coefficients</a></div><div class="ttdef"><b>Definition</b> Input_output.h:17</div></div>
+<div class="ttc" id="astructroots__struct_html"><div class="ttname"><a href="structroots__struct.html">roots_struct</a></div><div class="ttdoc">Structure has coefficients.</div><div class="ttdef"><b>Definition</b> Input_output.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

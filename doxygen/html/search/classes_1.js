@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['foreignstruct_0',['foreignstruct',['../structforeignstruct.html',1,'']]]
+  ['roots_5fstruct_0',['roots_struct',['../structroots__struct.html',1,'']]]
 ];
