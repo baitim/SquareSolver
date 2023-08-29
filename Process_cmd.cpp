@@ -23,7 +23,7 @@ void input_cmd(int argc, const char *argv[], cmd_input_data *cmd_data)
 
 void coef_a_callback(const char* argv[], cmd_input_data* data)
 {
-        char *stopstring;
+        char *stopstring = nullptr;
         data->a = strtod(argv[1], &stopstring);
         if (*stopstring == '\0')
                 data->is_a = true;
@@ -31,7 +31,7 @@ void coef_a_callback(const char* argv[], cmd_input_data* data)
 
 void coef_b_callback(const char* argv[], cmd_input_data* data)
 {
-        char *stopstring;
+        char *stopstring = nullptr;
         data->b = strtod(argv[1], &stopstring);
         if (*stopstring == '\0')
                 data->is_b = true;
@@ -39,7 +39,7 @@ void coef_b_callback(const char* argv[], cmd_input_data* data)
 
 void coef_c_callback(const char* argv[], cmd_input_data* data)
 {
-        char *stopstring;
+        char *stopstring = nullptr;
         data->c = strtod(argv[1], &stopstring);
         if (*stopstring == '\0')
                 data->is_c = true;
