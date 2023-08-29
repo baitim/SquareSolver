@@ -60,7 +60,7 @@ bool is_input_empty()
 {
         bool is_empty = true;
         int c = 0;
-        while ((c = getchar()) != '\n') {
+        while ((c = getchar()) != '\n' && (c = getchar()) != EOF) {
                 if (!isspace(c))
                         is_empty = false;
         }
